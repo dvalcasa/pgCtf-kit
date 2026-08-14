@@ -14,7 +14,11 @@ struct CylinderMap: Identifiable, Codable, Hashable {
     var imageData: Data?
     var cylinders: [Cylinder]
     
-    init(id: UUID? = nil, name: String, description: String? = nil, imageData: Data? = nil, cylinders: [Cylinder] = []) {
+    init(id: UUID? = nil,
+         name: String,
+         description: String? = nil,
+         imageData: Data? = nil,
+         cylinders: [Cylinder] = []) {
         self.id = id
         self.name = name
         self.description = nil

@@ -19,10 +19,16 @@ struct User: Identifiable, Codable, Sendable, Hashable {
     let isRestricted: Bool
     let isAdmin: Bool
     
-    init(id: UUID? = nil, username: String, email: String,
-         firstName: String? = nil, lastName: String? = nil, playerName: String? = nil,
+    init(id: UUID? = nil,
+         username: String,
+         email: String,
+         firstName: String? = nil,
+         lastName: String? = nil,
+         playerName: String? = nil,
          gliderId: UUID? = nil,
-         isAdmin: Bool, status: User.Status, isRestricted: Bool) {
+         isAdmin: Bool,
+         status: User.Status,
+         isRestricted: Bool) {
         self.id = id
         self.username = username
         self.email = email

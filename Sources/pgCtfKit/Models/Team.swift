@@ -9,13 +9,18 @@ import Foundation
 
 struct Team: Identifiable, Codable, Sendable, Hashable {
     let id: UUID?
-    var name: String
-    var color: Int
-    var nbPlayersMax: Int
-    var players: [Player]
-    var gameId: UUID?
+    let name: String
+    let color: Int
+    let nbPlayersMax: Int
+    let players: [Player]
+    let gameId: UUID?
     
-    init(id: UUID? = nil, name: String, color: Int, nbPlayersMax: Int, players: [Player] = [], gameId: UUID? = nil) {
+    init(id: UUID? = nil,
+         name: String,
+         color: Int,
+         nbPlayersMax: Int,
+         players: [Player] = [],
+         gameId: UUID? = nil) {
         self.id = id
         self.name = name
         self.color = color

@@ -30,6 +30,14 @@ struct Player: Identifiable, Codable, Sendable, Hashable {
         }
     }
     
+    var altitude: Double? {
+        if let lastLocation = locations.last {
+            return lastLocation.altitude
+        } else {
+            return nil
+        }
+    }
+    
     init(id: UUID? = nil,
          name: String,
          user: User,
