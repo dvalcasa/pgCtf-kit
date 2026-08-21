@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MeResponse {
+public struct MeResponse {
     let id: UUID
     let email: String?
     let role: String?

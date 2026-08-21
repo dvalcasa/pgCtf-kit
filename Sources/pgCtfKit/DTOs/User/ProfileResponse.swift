@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProfileResponse {
+public struct ProfileResponse {
     let id: UUID?
     let userId: UUID
     let username: String
@@ -21,7 +21,7 @@ struct ProfileResponse {
     let isRestricted: Bool
 }
 
-struct UpsertProfileInput {
+public struct UpsertProfileInput {
     let displayName: String
     let bio: String?
 }

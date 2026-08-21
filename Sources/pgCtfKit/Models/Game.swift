@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Game: Identifiable, Codable, Sendable, Hashable {
+public struct Game {
     let id: UUID?
     var name: String
     var cylinderMapId: UUID?

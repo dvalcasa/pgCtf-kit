@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TokenResponse {
+public struct TokenResponse {
     let accessToken: String?
     let refreshToken: String?
     let userId: UUID?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GameResponse: Codable, Sendable {
+public struct GameResponse: Codable {
     let id: UUID?
     let name: String
     let scoringType: String

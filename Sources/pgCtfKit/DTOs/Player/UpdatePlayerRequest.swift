@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UpdatePlayerRequest: Codable {
+public struct UpdatePlayerRequest: Codable {
     let name: String?
     let teamId: UUID?
     

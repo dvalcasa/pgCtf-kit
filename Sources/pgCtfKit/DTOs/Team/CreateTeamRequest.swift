@@ -1,7 +1,7 @@
 
 import Foundation
 
-struct CreateTeamRequest {
+public struct CreateTeamRequest {
     let name: String
     let score: Int?
     let color: Int

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class TeamResponse: Codable, Sendable {
+public struct TeamResponse: Codable, Sendable {
     let id: UUID?
     let name: String
     let color: Int

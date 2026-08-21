@@ -1,5 +1,5 @@
 
-struct UpdateTeamRequest {
+public struct UpdateTeamRequest {
     let name: String?
     let color: Int?
     let score: Int?

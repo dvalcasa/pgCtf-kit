@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CylinderMapResponse: Codable {
+public struct CylinderMapResponse: Codable {
     let id: UUID?
     let name: String
     let description: String?

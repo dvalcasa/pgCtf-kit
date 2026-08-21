@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Cylinder: Identifiable, Codable, Hashable {
+public struct Cylinder {
     let id: UUID?
     let rank: Int
     var longitude: Double
@@ -30,7 +30,7 @@ struct Cylinder: Identifiable, Codable, Hashable {
     }
 }
 
-enum CylinderPoint {
+public enum CylinderPoint {
     case start
     case cylinder(rank: Int)
     case goal

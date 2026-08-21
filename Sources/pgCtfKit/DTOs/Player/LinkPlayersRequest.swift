@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LinkPlayersRequest: Codable {
+public struct LinkPlayersRequest: Codable {
     let players: [UUID]
     
     init(players: [UUID]) {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Glider: Identifiable, Codable, Hashable {
+public struct Glider {
     let id: UUID?
     let brand: String
     let model: String

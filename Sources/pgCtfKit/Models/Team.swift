@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Team: Identifiable, Codable, Sendable, Hashable {
+public struct Team {
     let id: UUID?
     let name: String
     let color: Int

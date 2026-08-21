@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Profile {
+public struct Profile {
     let id: UUID?
     let userId: UUID
     let username: String

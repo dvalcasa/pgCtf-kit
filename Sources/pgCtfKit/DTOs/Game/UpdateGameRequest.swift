@@ -1,7 +1,7 @@
  
 import Foundation
 
-struct UpdateGameRequest {
+public struct UpdateGameRequest {
     let name: String?
     let scoringType: ScoringType?
     let cylinderMapId: UUID?

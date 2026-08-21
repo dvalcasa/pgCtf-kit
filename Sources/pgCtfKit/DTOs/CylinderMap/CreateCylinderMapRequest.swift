@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CreateCylinderMapRequest: Codable {
+public struct CreateCylinderMapRequest: Codable {
     let name: String
     let description: String?
     let imageData: Data?

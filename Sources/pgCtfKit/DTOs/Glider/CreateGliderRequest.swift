@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CreateGliderRequest: Codable {
+public struct CreateGliderRequest: Codable {
     var brand: String
     var model: String
     var size: String

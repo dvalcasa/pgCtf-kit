@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CreateCylinderRequest: Codable {
+public struct CreateCylinderRequest: Codable {
     let rank: Int
     let latitude: Double
     let longitude: Double

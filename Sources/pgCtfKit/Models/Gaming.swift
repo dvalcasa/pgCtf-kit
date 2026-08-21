@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Gaming: Identifiable, Codable, Sendable, Hashable {
+public struct Gaming {
     let id: UUID?
     let name: String
     let cylinderMap: CylinderMap

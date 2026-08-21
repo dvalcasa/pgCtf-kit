@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LocationResponse: Codable {
+public struct LocationResponse: Codable {
     let id: UUID?
     let latitude: Double
     let longitude: Double

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Player: Identifiable, Codable, Sendable, Hashable {
+public struct Player {
     let id: UUID?
     let name: String
     let user: User
