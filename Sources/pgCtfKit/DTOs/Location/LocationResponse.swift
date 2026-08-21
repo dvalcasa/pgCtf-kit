@@ -1,13 +1,13 @@
 //
 //  LocationResponse.swift
-//  pgCtf
+//  pgCtfKit
 //
-//  Created by Didier Valcasara on 14/08/2026.
+//  Created by Didier Valcasara on 21/08/2026.
 //
 
 import Foundation
 
-public struct LocationResponse: Codable {
+public struct LocationResponse: Decodable {
     let id: UUID?
     let latitude: Double
     let longitude: Double

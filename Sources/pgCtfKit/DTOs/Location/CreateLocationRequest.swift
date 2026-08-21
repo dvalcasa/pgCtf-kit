@@ -1,13 +1,13 @@
 //
 //  CreateLocationRequest.swift
-//  pgCtf
+//  pgCtfKit
 //
-//  Created by Didier Valcasara on 14/08/2026.
+//  Created by Didier Valcasara on 21/08/2026.
 //
 
 import Foundation
 
-public struct CreateLocationRequest: Encodable, Sendable {
+public struct CreateLocationRequest: Encodable {
     let latitude: Double
     let longitude: Double
     let altitude: Double
