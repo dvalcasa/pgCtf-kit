@@ -18,13 +18,13 @@ public struct Gaming: Identifiable, Codable, Hashable, Sendable {
     
     public var isStarted: Bool { startAt <= .now }
     
-    init(id: UUID? = nil,
-         name: String,
-         cylinderMap: CylinderMap,
-         startAt: Date,
-         endAt: Date,
-         scoringType: String,
-         teams: [Team] = []) {
+    public init(id: UUID? = nil,
+                name: String,
+                cylinderMap: CylinderMap,
+                startAt: Date,
+                endAt: Date,
+                scoringType: String,
+                teams: [Team] = []) {
         self.id = id
         self.name = name
         self.cylinderMap = cylinderMap

@@ -15,12 +15,12 @@ public struct Location: Identifiable, Codable, Hashable, Sendable {
     public let timestamp: Date
     public let playerId: UUID
     
-    init(id: UUID? = nil,
-         longitude: Double,
-         latitude: Double,
-         altitude: Double,
-         timestamp: Date,
-         playerId: UUID) {
+    public init(id: UUID? = nil,
+                longitude: Double,
+                latitude: Double,
+                altitude: Double,
+                timestamp: Date,
+                playerId: UUID) {
         self.id = id
         self.longitude = longitude
         self.latitude = latitude

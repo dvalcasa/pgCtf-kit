@@ -26,14 +26,14 @@ public struct Game: Identifiable, Codable, Hashable, Sendable {
         }
     }
     
-    init(id: UUID? = nil,
-         name: String,
-         cylinderMapId: UUID? = nil,
-         startAt: Date,
-         endAt: Date,
-         scoringType: String,
-         teams: [Team] = [],
-         status: Game.Status) {
+    public init(id: UUID? = nil,
+                name: String,
+                cylinderMapId: UUID? = nil,
+                startAt: Date,
+                endAt: Date,
+                scoringType: String,
+                teams: [Team] = [],
+                status: Game.Status) {
         self.id = id
         self.name = name
         self.cylinderMapId = cylinderMapId

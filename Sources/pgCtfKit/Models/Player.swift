@@ -38,11 +38,11 @@ public struct Player: Identifiable, Codable, Hashable, Sendable {
         }
     }
     
-    init(id: UUID? = nil,
-         name: String,
-         user: User,
-         teamId: UUID? = nil,
-         locations: [Location] = []) {
+    public init(id: UUID? = nil,
+                name: String,
+                user: User,
+                teamId: UUID? = nil,
+                locations: [Location] = []) {
         self.id = id
         self.name = name
         self.user = user

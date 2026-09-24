@@ -20,17 +20,17 @@ public struct Profile: Identifiable, Codable, Hashable, Sendable {
     public let isRestricted: Bool
     public let isAdmin: Bool
     
-    init(id: UUID? = nil,
-         userId: UUID,
-         username: String,
-         email: String,
-         firstName: String? = nil,
-         lastName: String? = nil,
-         playerName: String? = nil,
-         gliderId: UUID? = nil,
-         isAdmin: Bool,
-         status: Profile.Status,
-         isRestricted: Bool) {
+    public init(id: UUID? = nil,
+                userId: UUID,
+                username: String,
+                email: String,
+                firstName: String? = nil,
+                lastName: String? = nil,
+                playerName: String? = nil,
+                gliderId: UUID? = nil,
+                isAdmin: Bool,
+                status: Profile.Status,
+                isRestricted: Bool) {
         self.id = id
         self.userId = userId
         self.username = username

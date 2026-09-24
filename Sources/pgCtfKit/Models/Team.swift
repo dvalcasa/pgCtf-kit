@@ -15,12 +15,12 @@ public struct Team: Identifiable, Codable, Hashable, Sendable {
     public let players: [Player]
     public let gameId: UUID?
     
-    init(id: UUID? = nil,
-         name: String,
-         color: Int,
-         nbPlayersMax: Int,
-         players: [Player] = [],
-         gameId: UUID? = nil) {
+    public init(id: UUID? = nil,
+                name: String,
+                color: Int,
+                nbPlayersMax: Int,
+                players: [Player] = [],
+                gameId: UUID? = nil) {
         self.id = id
         self.name = name
         self.color = color

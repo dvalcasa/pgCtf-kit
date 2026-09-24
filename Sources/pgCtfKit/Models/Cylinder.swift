@@ -15,12 +15,12 @@ public struct Cylinder: Identifiable, Codable, Hashable, Sendable {
     public var radius: Double
     public var cylinderMapId: UUID?
     
-    init(id: UUID? = nil,
-         rank: Int,
-         longitude: Double,
-         latitude: Double,
-         radius: Double,
-         cylinderMapId: UUID? = nil) {
+    public init(id: UUID? = nil,
+                rank: Int,
+                longitude: Double,
+                latitude: Double,
+                radius: Double,
+                cylinderMapId: UUID? = nil) {
         self.id = id
         self.rank = rank
         self.longitude = longitude
@@ -35,7 +35,7 @@ public enum CylinderPoint {
     case cylinder(rank: Int)
     case goal
     
-    var rank: Int {
+    public var rank: Int {
         switch self {
             case .start:
                 return 0
@@ -46,7 +46,7 @@ public enum CylinderPoint {
         }
     }
     
-    var name: String {
+    public var name: String {
         switch self {
             case .start:
                 return "Start"
