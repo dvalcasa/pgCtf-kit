@@ -8,14 +8,19 @@
 import Foundation
 
 public struct GliderResponse: Codable {
-    let id: UUID?
-    let brand: String
-    let model: String
-    let size: String
-    let colorName: String
-    let colors: [Int]?
+    public let id: UUID?
+    public let brand: String
+    public let model: String
+    public let size: String
+    public let colorName: String
+    public let colors: [Int]?
     
-    init(id: UUID? = nil, brand: String, model: String, size: String, colorName: String, colors: [Int]? = nil) {
+    public init(id: UUID? = nil,
+                brand: String,
+                model: String,
+                size: String,
+                colorName: String,
+                colors: [Int]? = nil) {
         self.id = id
         self.brand = brand
         self.model = model

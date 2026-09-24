@@ -10,4 +10,9 @@ import Foundation
 public struct LoginResponse: Codable {
     public let token: String
     public let userId: UUID
+    
+    public init(token: String, userId: UUID) {
+        self.token = token
+        self.userId = userId
+    }
 }

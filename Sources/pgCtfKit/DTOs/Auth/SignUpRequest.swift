@@ -18,13 +18,13 @@ public struct SignUpRequest {
     public let isRestricted: Bool?
     
     public init(username: String,
-         password: String,
-         email: String,
-         firstName: String? = nil,
-         lastName: String? = nil,
-         playerName: String? = nil,
-         gliderId: UUID? = nil,
-         isRestricted: Bool? = true) {
+                password: String,
+                email: String,
+                firstName: String? = nil,
+                lastName: String? = nil,
+                playerName: String? = nil,
+                gliderId: UUID? = nil,
+                isRestricted: Bool? = true) {
         self.username = username
         self.password = password
         self.email = email

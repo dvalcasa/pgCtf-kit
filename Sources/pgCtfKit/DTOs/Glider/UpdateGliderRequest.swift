@@ -8,13 +8,17 @@
 import Foundation
 
 public struct UpdateGliderRequest: Codable {
-    var brand: String?
-    var model: String?
-    var size: String?
-    var colorName: String?
-    var colors: [Int]?
+    public let brand: String?
+    public let model: String?
+    public let size: String?
+    public let colorName: String?
+    public let colors: [Int]?
     
-    init(brand: String? = nil, model: String? = nil, size: String? = nil, colorName: String? = nil, colors: [Int]? = nil) {
+    public init(brand: String? = nil,
+                model: String? = nil,
+                size: String? = nil,
+                colorName: String? = nil,
+                colors: [Int]? = nil) {
         self.brand = brand
         self.model = model
         self.size = size
