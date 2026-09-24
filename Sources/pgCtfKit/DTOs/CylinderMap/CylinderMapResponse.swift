@@ -13,7 +13,8 @@ public struct CylinderMapResponse: Decodable {
     public let description: String?
     public let imageData: Data?
     
-    public init(id: UUID?, name: String,
+    public init(id: UUID?,
+                name: String,
                 description: String? = nil,
                 imageData: Data? = nil) {
         self.id = id

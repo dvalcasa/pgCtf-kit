@@ -1,5 +1,5 @@
 //
-//  UpadateCylinderMapRequest.swift
+//  UpdateCylinderMapRequest.swift
 //  iPgCtf
 //
 //  Created by Didier Valcasara on 20/04/2026.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UpadateCylinderMapRequest: Encodable {
+struct UpdateCylinderMapRequest: Encodable {
     public let name: String?
     public let description: String?
     public let imageData: Data?
