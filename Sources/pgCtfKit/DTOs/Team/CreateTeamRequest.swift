@@ -9,7 +9,7 @@ public struct CreateTeamRequest: Encodable {
     public let gameId: UUID
     
     public init(name: String,
-                score: Int?,
+                score: Int? = nil,
                 color: Int,
                 nbPlayersMax: Int = 1,
                 gameId: UUID) {
