@@ -18,6 +18,16 @@ public struct Gaming: Identifiable, Codable, Hashable, Sendable {
     
     public var isStarted: Bool { startAt <= .now }
     
+    public init() {
+        self.id = nil
+        self.name = ""
+        self.cylinderMap = .init(name: "", cylinders: [])
+        self.endAt = .distantFuture
+        self.startAt = .distantPast
+        self.scoringType = "points"
+        self.teams = []
+    }
+    
     public init(id: UUID? = nil,
                 name: String,
                 cylinderMap: CylinderMap,
