@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UpadateCylinderMapRequest: Codable {
+struct UpadateCylinderMapRequest: Encodable {
     public let name: String?
     public let description: String?
     public let imageData: Data?

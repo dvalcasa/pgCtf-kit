@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct PlayerResponse: Codable {
+public struct PlayerResponse: Decodable {
     public let id: UUID?
     public let name: String
     public let userId: UUID

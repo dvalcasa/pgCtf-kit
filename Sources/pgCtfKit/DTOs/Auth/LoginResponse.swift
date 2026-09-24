@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct LoginResponse: Codable {
+public struct LoginResponse: Decodable {
     public let token: String
     public let userId: UUID
     

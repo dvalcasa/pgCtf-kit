@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct GliderResponse: Codable {
+public struct GliderResponse: Decodable {
     public let id: UUID?
     public let brand: String
     public let model: String
@@ -28,4 +28,14 @@ public struct GliderResponse: Codable {
         self.colorName = colorName
         self.colors = colors
     }
+    
+    public func toModel() -> Glider {
+        Glider(id: id,
+               brand: brand,
+               model: model,
+               size: size,
+               colorName: colorName,
+               colors: colors)
+    }
+
 }

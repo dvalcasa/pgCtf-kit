@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct MeResponse {
+public struct MeResponse: Decodable {
     public let id: UUID
     public let email: String?
     public let role: String?

@@ -5,7 +5,7 @@
 //  Created by Didier Valcasara on 05/07/2026.
 //
 
-public struct RefreshTokenRequest {
+public struct RefreshTokenRequest: Encodable {
     public let refreshToken: String
     
     public init(refreshToken: String) {

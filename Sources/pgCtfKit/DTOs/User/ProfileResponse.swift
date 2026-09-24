@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ProfileResponse {
+public struct ProfileResponse: Decodable {
     public let id: UUID?
     public let userId: UUID
     public let username: String
@@ -45,7 +45,7 @@ public struct ProfileResponse {
     }
 }
 
-public struct UpsertProfileInput {
+public struct UpsertProfileInput: Encodable {
     public let displayName: String
     public let bio: String?
     

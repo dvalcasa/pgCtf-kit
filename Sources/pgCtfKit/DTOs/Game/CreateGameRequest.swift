@@ -1,7 +1,7 @@
 
 import Foundation
 
-public struct CreateGameRequest {
+public struct CreateGameRequest: Encodable {
     public let name: String
     public let scoringType: ScoringType
     public let cylinderMapId: UUID?
