@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct Team {
-    let id: UUID?
-    let name: String
-    let color: Int
-    let nbPlayersMax: Int
-    let players: [Player]
-    let gameId: UUID?
+public struct Team: Identifiable, Codable, Hashable, Sendable {
+    public let id: UUID?
+    public let name: String
+    public let color: Int
+    public let nbPlayersMax: Int
+    public let players: [Player]
+    public let gameId: UUID?
     
     init(id: UUID? = nil,
          name: String,

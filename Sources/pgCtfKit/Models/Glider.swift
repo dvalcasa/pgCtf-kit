@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct Glider {
-    let id: UUID?
-    let brand: String
-    let model: String
-    let size: String
-    let colorName: String
-    let colors: [Int]?
+public struct Glider: Identifiable, Codable, Hashable, Sendable {
+    public let id: UUID?
+    public let brand: String
+    public let model: String
+    public let size: String
+    public let colorName: String
+    public let colors: [Int]?
     
     init(id: UUID? = nil,
          brand: String,

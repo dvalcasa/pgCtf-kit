@@ -7,11 +7,16 @@
 
 import Foundation
 
-public struct Token {
-    var userId: UUID?
-    var token: String
+public struct Token: Codable, Hashable, Sendable {
+    public var userId: UUID?
+    public var token: String
     
     init(token: String) {
+        self.token = token
+    }
+    
+    init(userId: UUID, token: String) {
+        self.userId = userId
         self.token = token
     }
 }

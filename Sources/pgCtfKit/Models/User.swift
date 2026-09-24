@@ -7,28 +7,28 @@
 
 import Foundation
 
-public struct User {
-    let id: UUID?
-    let username: String
-    let email: String
-    let firstName: String?
-    let lastName: String?
-    let playerName: String?
-    let gliderId: UUID?
-    let status: User.Status
-    let isRestricted: Bool
-    let isAdmin: Bool
+public struct User: Identifiable, Codable, Hashable, Sendable {
+    public let id: UUID?
+    public let username: String
+    public let email: String
+    public let firstName: String?
+    public let lastName: String?
+    public let playerName: String?
+    public let gliderId: UUID?
+    public let status: User.Status
+    public let isRestricted: Bool
+    public let isAdmin: Bool
     
-    init(id: UUID? = nil,
-         username: String,
-         email: String,
-         firstName: String? = nil,
-         lastName: String? = nil,
-         playerName: String? = nil,
-         gliderId: UUID? = nil,
-         isAdmin: Bool,
-         status: User.Status,
-         isRestricted: Bool) {
+    public init(id: UUID? = nil,
+                username: String,
+                email: String,
+                firstName: String? = nil,
+                lastName: String? = nil,
+                playerName: String? = nil,
+                gliderId: UUID? = nil,
+                isAdmin: Bool,
+                status: User.Status,
+                isRestricted: Bool) {
         self.id = id
         self.username = username
         self.email = email
@@ -41,7 +41,7 @@ public struct User {
         self.gliderId = gliderId
     }
     
-    enum Status: Int, Codable {
-        case unknown, unconfirmed, activated, suspended, banned, deleted 
+    public enum Status: Int, Codable, Sendable {
+        case unknown, unconfirmed, activated, suspended, banned, deleted
     }
 }

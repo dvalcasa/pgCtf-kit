@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct Location {
-    let id: UUID?
-    let longitude: Double
-    let latitude: Double
-    let altitude: Double
-    let timestamp: Date
-    let playerId: UUID
+public struct Location: Identifiable, Codable, Hashable, Sendable {
+    public let id: UUID?
+    public let longitude: Double
+    public let latitude: Double
+    public let altitude: Double
+    public let timestamp: Date
+    public let playerId: UUID
     
     init(id: UUID? = nil,
          longitude: Double,

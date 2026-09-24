@@ -15,12 +15,12 @@ public struct Cylinder: Identifiable, Codable, Hashable, Sendable {
     public var radius: Double
     public var cylinderMapId: UUID?
     
-    public init(id: UUID? = nil,
-                rank: Int,
-                longitude: Double,
-                latitude: Double,
-                radius: Double,
-                cylinderMapId: UUID? = nil) {
+    init(id: UUID? = nil,
+         rank: Int,
+         longitude: Double,
+         latitude: Double,
+         radius: Double,
+         cylinderMapId: UUID? = nil) {
         self.id = id
         self.rank = rank
         self.longitude = longitude

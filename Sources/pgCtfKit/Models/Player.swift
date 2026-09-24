@@ -7,14 +7,14 @@
 
 import Foundation
 
-public struct Player {
-    let id: UUID?
-    let name: String
-    let user: User
-    let teamId: UUID?
-    let locations: [Location]
+public struct Player: Identifiable, Codable, Hashable, Sendable {
+    public let id: UUID?
+    public let name: String
+    public let user: User
+    public let teamId: UUID?
+    public let locations: [Location]
     
-    var longitude: Double? {
+    public var longitude: Double? {
         if let lastLocation = locations.last {
             return lastLocation.longitude
         } else {
@@ -22,7 +22,7 @@ public struct Player {
         }
     }
     
-    var latitude: Double? {
+    public var latitude: Double? {
         if let lastLocation = locations.last {
             return lastLocation.latitude
         } else {
@@ -30,7 +30,7 @@ public struct Player {
         }
     }
     
-    var altitude: Double? {
+    public var altitude: Double? {
         if let lastLocation = locations.last {
             return lastLocation.altitude
         } else {

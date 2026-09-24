@@ -7,16 +7,16 @@
 
 import Foundation
 
-public struct Gaming {
-    let id: UUID?
-    let name: String
-    let cylinderMap: CylinderMap
-    let endAt: Date
-    let startAt: Date
-    let scoringType: String
-    let teams: [Team]
+public struct Gaming: Identifiable, Codable, Hashable, Sendable {
+    public let id: UUID?
+    public let name: String
+    public let cylinderMap: CylinderMap
+    public let endAt: Date
+    public let startAt: Date
+    public let scoringType: String
+    public let teams: [Team]
     
-    var isStarted: Bool { startAt <= .now }
+    public var isStarted: Bool { startAt <= .now }
     
     init(id: UUID? = nil,
          name: String,

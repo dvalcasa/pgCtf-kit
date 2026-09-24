@@ -7,18 +7,18 @@
 
 import Foundation
 
-public struct Profile {
-    let id: UUID?
-    let userId: UUID
-    let username: String
-    let email: String
-    let firstName: String?
-    let lastName: String?
-    let playerName: String?
-    let gliderId: UUID?
-    let status: Profile.Status
-    let isRestricted: Bool
-    let isAdmin: Bool
+public struct Profile: Identifiable, Codable, Hashable, Sendable {
+    public let id: UUID?
+    public let userId: UUID
+    public let username: String
+    public let email: String
+    public let firstName: String?
+    public let lastName: String?
+    public let playerName: String?
+    public let gliderId: UUID?
+    public let status: Profile.Status
+    public let isRestricted: Bool
+    public let isAdmin: Bool
     
     init(id: UUID? = nil,
          userId: UUID,
@@ -46,7 +46,7 @@ public struct Profile {
 }
 
 extension Profile {
-    enum Status: Int, Codable {
+    public enum Status: Int, Codable, Sendable {
         case notSubscribe, waiting, activated
     }
 }

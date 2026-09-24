@@ -7,17 +7,17 @@
 
 import Foundation
 
-public struct Game {
-    let id: UUID?
-    var name: String
-    var cylinderMapId: UUID?
-    var endAt: Date
-    var startAt: Date
-    var scoringType: String
-    var teams: [Team]
-    var status: Game.Status
+public struct Game: Identifiable, Codable, Hashable, Sendable {
+    public let id: UUID?
+    public var name: String
+    public var cylinderMapId: UUID?
+    public var endAt: Date
+    public var startAt: Date
+    public var scoringType: String
+    public var teams: [Team]
+    public var status: Game.Status
     
-    var isStarted: Bool {
+    public var isStarted: Bool {
         switch status {
             case .new, .created:
                 return false;
@@ -44,7 +44,7 @@ public struct Game {
         self.status = status
     }
     
-    enum Status: Int, Codable {
+    public enum Status: Int, Codable, Sendable {
         case new, created, started, ended, closed
     }
 }
