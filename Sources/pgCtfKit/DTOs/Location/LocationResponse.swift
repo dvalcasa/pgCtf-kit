@@ -8,19 +8,19 @@
 import Foundation
 
 public struct LocationResponse: Decodable {
-    let id: UUID?
-    let latitude: Double
-    let longitude: Double
-    let altitude: Double
-    let timestamp: String
-    let playerId: UUID
+    public let id: UUID?
+    public let latitude: Double
+    public let longitude: Double
+    public let altitude: Double
+    public let timestamp: String
+    public let playerId: UUID
     
-    init(id: UUID?,
-         latitude: Double,
-         longitude: Double,
-         altitude: Double,
-         timestamp: String,
-         playerId: UUID) {
+    public init(id: UUID?,
+                latitude: Double,
+                longitude: Double,
+                altitude: Double,
+                timestamp: String,
+                playerId: UUID) {
         self.id = id
         self.latitude = latitude
         self.longitude = longitude

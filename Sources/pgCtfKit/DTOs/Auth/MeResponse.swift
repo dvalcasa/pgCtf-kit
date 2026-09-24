@@ -8,7 +8,7 @@
 import Foundation
 
 public struct MeResponse {
-    let id: UUID
-    let email: String?
-    let role: String?
+    public let id: UUID
+    public let email: String?
+    public let role: String?
 }

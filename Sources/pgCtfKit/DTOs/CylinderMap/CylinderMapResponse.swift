@@ -8,19 +8,21 @@
 import Foundation
 
 public struct CylinderMapResponse: Codable {
-    let id: UUID?
-    let name: String
-    let description: String?
-    let imageData: Data?
+    public let id: UUID?
+    public let name: String
+    public let description: String?
+    public let imageData: Data?
     
-    init(id: UUID?, name: String, description: String? = nil, imageData: Data? = nil) {
+    public init(id: UUID?, name: String,
+                description: String? = nil,
+                imageData: Data? = nil) {
         self.id = id
         self.name = name
         self.description = description
         self.imageData = imageData
     }
     
-    func toModel() -> CylinderMap {
+    public func toModel() -> CylinderMap {
         CylinderMap(
             id: id,
             name: name,

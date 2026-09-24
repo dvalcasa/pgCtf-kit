@@ -8,19 +8,19 @@
 import Foundation
 
 public struct GameRequest: Codable {
-    let name: String?
-    let scoringType: String?
-    let cylinderMapId: UUID?
-    let startAt: String?
-    let endAt: String?
-    let status: Game.Status?
+    public let name: String?
+    public let scoringType: String?
+    public let cylinderMapId: UUID?
+    public let startAt: String?
+    public let endAt: String?
+    public let status: Game.Status?
     
-    init(name: String? = nil,
-         scoringType: String? = nil,
-         cylinderMapId: UUID? = nil,
-         startAt: String? = nil,
-         endAt: String? = nil,
-         status: Game.Status? = nil) {
+    public init(name: String? = nil,
+                scoringType: String? = nil,
+                cylinderMapId: UUID? = nil,
+                startAt: String? = nil,
+                endAt: String? = nil,
+                status: Game.Status? = nil) {
         self.name = name
         self.scoringType = scoringType
         self.cylinderMapId = cylinderMapId

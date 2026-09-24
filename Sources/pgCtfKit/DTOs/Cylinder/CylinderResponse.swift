@@ -8,19 +8,19 @@
 import Foundation
 
 public struct CylinderResponse: Codable {
-    let id: UUID?
-    let rank: Int
-    var longitude: Double
-    var latitude: Double
-    var radius: Double
-    var cylinderMapId: UUID
+    public let id: UUID?
+    public let rank: Int
+    public let longitude: Double
+    public let latitude: Double
+    public let radius: Double
+    public let cylinderMapId: UUID
     
-    init(id: UUID? = nil,
-        rank: Int,
-        longitude: Double,
-        latitude: Double,
-        radius: Double,
-        cylinderMapId: UUID) {
+    public init(id: UUID? = nil,
+                rank: Int,
+                longitude: Double,
+                latitude: Double,
+                radius: Double,
+                cylinderMapId: UUID) {
         self.id = id
         self.rank = rank
         self.longitude = longitude

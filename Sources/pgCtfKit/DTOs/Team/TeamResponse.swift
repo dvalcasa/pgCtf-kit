@@ -8,19 +8,19 @@
 import Foundation
 
 public struct TeamResponse: Codable, Sendable {
-    let id: UUID?
-    let name: String
-    let color: Int
-    let score: Int
-    let gameId: UUID
-    let nbPlayersMax: Int
+    public let id: UUID?
+    public let name: String
+    public let color: Int
+    public let score: Int
+    public let gameId: UUID
+    public let nbPlayersMax: Int
     
-    init(id: UUID?,
-         name: String,
-         color: Int,
-         score: Int,
-         gameId: UUID,
-         nbPlayersMax: Int) {
+    public init(id: UUID?,
+                name: String,
+                color: Int,
+                score: Int,
+                gameId: UUID,
+                nbPlayersMax: Int) {
         self.id = id
         self.name = name
         self.color = color

@@ -8,21 +8,21 @@
 import Foundation
 
 public struct UpdateUserRequest: Codable {
-    let username: String?
-    let firstName: String?
-    let lastName: String?
-    let playerName: String?
-    let email: String?
-    let gliderId: UUID?
-    let isRestricted: Bool?
+    public let username: String?
+    public let firstName: String?
+    public let lastName: String?
+    public let playerName: String?
+    public let email: String?
+    public let gliderId: UUID?
+    public let isRestricted: Bool?
     
-    init(username: String? = nil,
-         email: String? = nil,
-         firstName: String? = nil,
-         lastName: String? = nil,
-         playerName: String? = nil,
-         gliderId: UUID? = nil,
-         isRestricted: Bool? = nil) {
+    public init(username: String? = nil,
+                email: String? = nil,
+                firstName: String? = nil,
+                lastName: String? = nil,
+                playerName: String? = nil,
+                gliderId: UUID? = nil,
+                isRestricted: Bool? = nil) {
         self.username = username
         self.email = email
         self.firstName = firstName

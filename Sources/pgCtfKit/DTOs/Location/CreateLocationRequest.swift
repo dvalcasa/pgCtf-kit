@@ -8,17 +8,17 @@
 import Foundation
 
 public struct CreateLocationRequest: Encodable {
-    let latitude: Double
-    let longitude: Double
-    let altitude: Double
-    let timestamp: Date
-    let playerId: UUID
+    public let latitude: Double
+    public let longitude: Double
+    public let altitude: Double
+    public let timestamp: Date
+    public let playerId: UUID
     
     public init(latitude: Double,
-         longitude: Double,
-         altitude: Double,
-         timestamp: Date,
-         playerId: UUID) {
+                longitude: Double,
+                altitude: Double,
+                timestamp: Date,
+                playerId: UUID) {
         self.latitude = latitude
         self.longitude = longitude
         self.altitude = altitude

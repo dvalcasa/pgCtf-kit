@@ -8,15 +8,15 @@
 import Foundation
 
 public struct PlayerResponse: Codable {
-    let id: UUID?
-    let name: String
-    let userId: UUID
-    let teamId: UUID?
+    public let id: UUID?
+    public let name: String
+    public let userId: UUID
+    public let teamId: UUID?
     
-    init(id: UUID?,
-         name: String,
-         userId: UUID,
-         teamId: UUID? = nil) {
+    public init(id: UUID?,
+                name: String,
+                userId: UUID,
+                teamId: UUID? = nil) {
         self.id = id
         self.name = name
         self.userId = userId

@@ -8,16 +8,16 @@
 import Foundation
 
 public struct SignUpRequest {
-    let username: String
-    let password: String
-    let email: String
-    let firstName: String?
-    let lastName: String?
-    let playerName: String?
-    let gliderId: UUID?
-    let isRestricted: Bool?
+    public let username: String
+    public let password: String
+    public let email: String
+    public let firstName: String?
+    public let lastName: String?
+    public let playerName: String?
+    public let gliderId: UUID?
+    public let isRestricted: Bool?
     
-    init(username: String,
+    public init(username: String,
          password: String,
          email: String,
          firstName: String? = nil,

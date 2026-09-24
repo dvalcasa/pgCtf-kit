@@ -8,20 +8,20 @@
 import Foundation
 
 public struct ProfileResponse {
-    let id: UUID?
-    let userId: UUID
-    let username: String
-    let email: String
-    let firstName: String?
-    let lastName: String?
-    let playerName: String?
-    let gliderId: UUID?
-    let status: Profile.Status
-    let isAdmin: Bool
-    let isRestricted: Bool
+    public let id: UUID?
+    public let userId: UUID
+    public let username: String
+    public let email: String
+    public let firstName: String?
+    public let lastName: String?
+    public let playerName: String?
+    public let gliderId: UUID?
+    public let status: Profile.Status
+    public let isAdmin: Bool
+    public let isRestricted: Bool
 }
 
 public struct UpsertProfileInput {
-    let displayName: String
-    let bio: String?
+    public let displayName: String
+    public let bio: String?
 }

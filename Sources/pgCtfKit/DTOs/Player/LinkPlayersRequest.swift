@@ -8,9 +8,9 @@
 import Foundation
 
 public struct LinkPlayersRequest: Codable {
-    let players: [UUID]
+    public let players: [UUID]
     
-    init(players: [UUID]) {
+    public init(players: [UUID]) {
         self.players = players
     }
 }

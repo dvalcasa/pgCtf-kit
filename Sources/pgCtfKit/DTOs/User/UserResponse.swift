@@ -8,27 +8,27 @@
 import Foundation
 
 public struct UserResponse: Codable {
-    let id: UUID
-    let username: String
-    let email: String
-    let firstName: String?
-    let lastName: String?
-    let playerName: String?
-    let gliderId: UUID?
-    let status: User.Status
-    let isAdmin: Bool
-    let isRestricted: Bool
+    public let id: UUID
+    public let username: String
+    public let email: String
+    public let firstName: String?
+    public let lastName: String?
+    public let playerName: String?
+    public let gliderId: UUID?
+    public let status: User.Status
+    public let isAdmin: Bool
+    public let isRestricted: Bool
     
-    init(id: UUID,
-         username: String,
-         email: String,
-         firstName: String? = nil,
-         lastName: String? = nil,
-         playerName: String? = nil,
-         gliderId: UUID? = nil,
-         status: User.Status,
-         isAdmin: Bool,
-         isRestricted: Bool) {
+    public init(id: UUID,
+                username: String,
+                email: String,
+                firstName: String? = nil,
+                lastName: String? = nil,
+                playerName: String? = nil,
+                gliderId: UUID? = nil,
+                status: User.Status,
+                isAdmin: Bool,
+                isRestricted: Bool) {
         self.id = id
         self.username = username
         self.email = email

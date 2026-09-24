@@ -8,10 +8,11 @@
 import Foundation
 
 public struct UpdatePlayerRequest: Codable {
-    let name: String?
-    let teamId: UUID?
+    public let name: String?
+    public let teamId: UUID?
     
-    init(name: String? = nil, teamId: UUID? = nil) {
+    public init(name: String? = nil,
+                teamId: UUID? = nil) {
         self.name = name
         self.teamId = teamId
     }

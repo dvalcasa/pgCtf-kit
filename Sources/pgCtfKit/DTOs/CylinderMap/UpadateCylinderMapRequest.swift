@@ -8,11 +8,13 @@
 import Foundation
 
 struct UpadateCylinderMapRequest: Codable {
-    let name: String?
-    let description: String?
-    let imageData: Data?
+    public let name: String?
+    public let description: String?
+    public let imageData: Data?
     
-    init(name: String? = nil, description: String? = nil, imageData: Data? = nil) {
+    public init(name: String? = nil,
+                description: String? = nil,
+                imageData: Data? = nil) {
         self.name = name
         self.description = description
         self.imageData = imageData

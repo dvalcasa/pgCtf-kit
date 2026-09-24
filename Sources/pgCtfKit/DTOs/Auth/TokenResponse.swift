@@ -8,7 +8,7 @@
 import Foundation
 
 public struct TokenResponse {
-    let accessToken: String?
-    let refreshToken: String?
-    let userId: UUID?
+    public let accessToken: String?
+    public let refreshToken: String?
+    public let userId: UUID?
 }

@@ -8,11 +8,11 @@
 import Foundation
 
 public struct CreateCylinderRequest: Codable {
-    let rank: Int
-    let latitude: Double
-    let longitude: Double
-    let radius: Double
-    let cylinderMapId: UUID
-    let colorRaw: Int
+    public let rank: Int
+    public let latitude: Double
+    public let longitude: Double
+    public let radius: Double
+    public let cylinderMapId: UUID
+    public let colorRaw: Int
 }
 

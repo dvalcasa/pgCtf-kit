@@ -6,5 +6,5 @@
 //
 
 public struct RefreshTokenRequest {
-    let refreshToken: String
+    public let refreshToken: String
 }

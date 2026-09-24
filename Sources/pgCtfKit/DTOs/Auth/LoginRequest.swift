@@ -6,6 +6,6 @@
 //
 
 public struct LoginRequest {
-    let email: String
-    let password: String
+    public let email: String
+    public let password: String
 }
