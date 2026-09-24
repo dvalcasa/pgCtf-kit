@@ -8,17 +8,17 @@
 import Foundation
 
 public struct CylinderMap {
-    let id: UUID?
-    var name: String
-    let description: String?
-    var imageData: Data?
-    var cylinders: [Cylinder]
+    public let id: UUID?
+    public var name: String
+    public let description: String?
+    public var imageData: Data?
+    public var cylinders: [Cylinder]
     
-    init(id: UUID? = nil,
-         name: String,
-         description: String? = nil,
-         imageData: Data? = nil,
-         cylinders: [Cylinder] = []) {
+    public init(id: UUID? = nil,
+                name: String,
+                description: String? = nil,
+                imageData: Data? = nil,
+                cylinders: [Cylinder] = []) {
         self.id = id
         self.name = name
         self.description = nil
