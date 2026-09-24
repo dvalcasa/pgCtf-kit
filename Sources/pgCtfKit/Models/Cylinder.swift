@@ -7,20 +7,20 @@
 
 import Foundation
 
-public struct Cylinder {
-    let id: UUID?
-    let rank: Int
-    var longitude: Double
-    var latitude: Double
-    var radius: Double
-    var cylinderMapId: UUID?
+public struct Cylinder: Identifiable, Codable, Hashable, Sendable {
+    public let id: UUID?
+    public let rank: Int
+    public var longitude: Double
+    public var latitude: Double
+    public var radius: Double
+    public var cylinderMapId: UUID?
     
-    init(id: UUID? = nil,
-         rank: Int,
-         longitude: Double,
-         latitude: Double,
-         radius: Double,
-         cylinderMapId: UUID? = nil) {
+    public init(id: UUID? = nil,
+                rank: Int,
+                longitude: Double,
+                latitude: Double,
+                radius: Double,
+                cylinderMapId: UUID? = nil) {
         self.id = id
         self.rank = rank
         self.longitude = longitude

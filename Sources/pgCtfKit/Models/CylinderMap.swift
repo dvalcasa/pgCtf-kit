@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CylinderMap {
+public struct CylinderMap: Identifiable, Codable, Hashable, Sendable {
     public let id: UUID?
     public var name: String
     public let description: String?
