@@ -8,7 +8,7 @@
 import Foundation
 
 public struct UserResponse: Decodable {
-    public let id: UUID
+    public let id: UUID?
     public let username: String
     public let email: String
     public let firstName: String?
@@ -19,7 +19,7 @@ public struct UserResponse: Decodable {
     public let isAdmin: Bool
     public let isRestricted: Bool
     
-    public init(id: UUID,
+    public init(id: UUID?,
                 username: String,
                 email: String,
                 firstName: String? = nil,

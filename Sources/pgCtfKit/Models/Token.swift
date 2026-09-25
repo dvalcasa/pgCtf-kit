@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Token: Codable, Hashable, Sendable {
+public struct Token: Codable, Hashable {
     public var userId: UUID?
     public var token: String
     
