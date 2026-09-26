@@ -10,7 +10,7 @@ import Foundation
 public struct Player: Identifiable, Codable, Hashable, Sendable {
     public let id: UUID?
     public let name: String
-    public let user: User
+    public let user: Profile
     public let teamId: UUID?
     public let locations: [Location]
     
@@ -40,7 +40,7 @@ public struct Player: Identifiable, Codable, Hashable, Sendable {
     
     public init(id: UUID? = nil,
                 name: String,
-                user: User,
+                user: Profile,
                 teamId: UUID? = nil,
                 locations: [Location] = []) {
         self.id = id
