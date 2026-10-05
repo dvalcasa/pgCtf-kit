@@ -1,5 +1,5 @@
 
-public struct UpdateTeamRequest: Encodable {
+public struct UpdateTeamRequest: Codable {
     public let name: String?
     public let color: Int?
     public let score: Int?
