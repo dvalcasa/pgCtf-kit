@@ -13,19 +13,35 @@ public struct CylinderResponse: Decodable {
     public let longitude: Double
     public let latitude: Double
     public let radius: Double
-    public let cylinderMapId: UUID
+    public let colorRaw: Int
+    public let cylinderMapId: UUID?
     
     public init(id: UUID? = nil,
                 rank: Int,
                 longitude: Double,
                 latitude: Double,
                 radius: Double,
-                cylinderMapId: UUID) {
+                colorRaw: Int,
+                cylinderMapId: UUID? = nil) {
         self.id = id
         self.rank = rank
         self.longitude = longitude
         self.latitude = latitude
         self.radius = radius
+        self.colorRaw = colorRaw
         self.cylinderMapId = cylinderMapId
+    }
+}
+
+extension CylinderResponse {
+    func toModel() -> Cylinder {
+        Cylinder(
+            id: id,
+            rank: rank,
+            longitude: longitude,
+            latitude: latitude,
+            radius: radius,
+            cylinderMapId: cylinderMapId
+        )
     }
 }

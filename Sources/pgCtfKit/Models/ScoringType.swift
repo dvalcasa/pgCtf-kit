@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ScoringType: String, CaseIterable, Codable {
+public enum ScoringType: String, CaseIterable, Codable, Sendable {
     case traditional = "TRADITIONAL"
     case degressive = "DEGRESSIVE"
 }

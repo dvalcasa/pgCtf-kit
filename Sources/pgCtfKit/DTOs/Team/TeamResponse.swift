@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TeamResponse: Decodable {
+public struct TeamResponse: Codable, Sendable {
     public let id: UUID?
     public let name: String
     public let color: Int
@@ -27,5 +27,15 @@ public struct TeamResponse: Decodable {
         self.score = score
         self.nbPlayersMax = nbPlayersMax
         self.gameId = gameId
+    }
+}
+
+extension TeamResponse {
+    public func toModel() -> Team {
+        Team(id: id,
+             name: name,
+             color: color,
+             nbPlayersMax: nbPlayersMax,
+             gameId: gameId)
     }
 }
