@@ -8,6 +8,7 @@
 import Foundation
 
 public enum ScoringType: String, CaseIterable, Codable, Sendable {
+    case none = ""
     case traditional = "TRADITIONAL"
     case degressive = "DEGRESSIVE"
 }
