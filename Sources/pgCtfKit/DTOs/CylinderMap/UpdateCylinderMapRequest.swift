@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UpdateCylinderMapRequest: Encodable {
+public struct UpdateCylinderMapRequest: Codable, Sendable {
     public let name: String?
     public let description: String?
     public let imageData: Data?

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct GliderResponse: Decodable {
+public struct GliderResponse: Codable, Sendable {
     public let id: UUID?
     public let brand: String
     public let model: String

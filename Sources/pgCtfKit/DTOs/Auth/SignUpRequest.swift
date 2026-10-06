@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct SignUpRequest: Encodable {
+public struct SignUpRequest: Codable, Sendable {
     public let username: String
     public let password: String
     public let email: String

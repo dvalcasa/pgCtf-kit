@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct GameResponse: Decodable {
+public struct GameResponse: Codable, Sendable {
     public let id: UUID?
     public let name: String
     public let scoringType: ScoringType

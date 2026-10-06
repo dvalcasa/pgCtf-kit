@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct LocationResponse: Decodable {
+public struct LocationResponse: Codable, Sendable {
     public let id: UUID?
     public let latitude: Double
     public let longitude: Double

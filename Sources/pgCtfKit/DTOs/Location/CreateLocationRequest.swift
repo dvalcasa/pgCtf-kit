@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CreateLocationRequest: Encodable {
+public struct CreateLocationRequest: Codable, Sendable {
     public let latitude: Double
     public let longitude: Double
     public let altitude: Double

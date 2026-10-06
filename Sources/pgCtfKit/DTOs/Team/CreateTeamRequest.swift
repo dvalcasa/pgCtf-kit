@@ -1,7 +1,7 @@
 
 import Foundation
 
-public struct CreateTeamRequest: Codable {
+public struct CreateTeamRequest: Codable, Sendable {
     public let name: String
     public let score: Int?
     public let color: Int

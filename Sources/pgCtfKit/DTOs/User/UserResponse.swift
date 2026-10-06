@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UserResponse: Decodable {
+public struct UserResponse: Codable, Sendable {
     public let id: UUID?
     public let username: String
     public let email: String

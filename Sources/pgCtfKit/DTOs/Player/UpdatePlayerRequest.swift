@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UpdatePlayerRequest: Encodable {
+public struct UpdatePlayerRequest: Codable, Sendable {
     public let name: String?
     public let teamId: UUID?
     

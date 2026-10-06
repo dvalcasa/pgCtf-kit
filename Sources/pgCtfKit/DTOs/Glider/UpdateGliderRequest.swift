@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UpdateGliderRequest: Encodable {
+public struct UpdateGliderRequest: Codable, Sendable {
     public let brand: String?
     public let model: String?
     public let size: String?

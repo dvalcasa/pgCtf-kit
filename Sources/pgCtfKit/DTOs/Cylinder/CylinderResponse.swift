@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CylinderResponse: Decodable {
+public struct CylinderResponse: Codable, Sendable {
     public let id: UUID?
     public let rank: Int
     public let longitude: Double

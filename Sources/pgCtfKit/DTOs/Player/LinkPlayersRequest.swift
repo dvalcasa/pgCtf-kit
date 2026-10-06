@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct LinkPlayersRequest: Encodable {
+public struct LinkPlayersRequest: Codable, Sendable {
     public let players: [UUID]
     
     public init(players: [UUID]) {

@@ -1,0 +1,11 @@
+//
+//  CreateGliderRequest.swift
+//  iPgCtf
+//
+//  Created by Didier Valcasara on 13/11/2025.
+//
+
+import pgCtfKit
+import Vapor
+
+extension CreateGliderRequest: Content {}
