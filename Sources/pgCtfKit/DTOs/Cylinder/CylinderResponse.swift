@@ -34,7 +34,7 @@ public struct CylinderResponse: Decodable {
 }
 
 extension CylinderResponse {
-    func toModel() -> Cylinder {
+    public func toModel() -> Cylinder {
         Cylinder(
             id: id,
             rank: rank,
