@@ -9,14 +9,14 @@ import Foundation
 
 public struct GameRequest: Encodable {
     public let name: String?
-    public let scoringType: String?
+    public let scoringType: ScoringType?
     public let cylinderMapId: UUID?
     public let startAt: String?
     public let endAt: String?
     public let status: Game.Status?
     
     public init(name: String? = nil,
-                scoringType: String? = nil,
+                scoringType: ScoringType? = nil,
                 cylinderMapId: UUID? = nil,
                 startAt: String? = nil,
                 endAt: String? = nil,
