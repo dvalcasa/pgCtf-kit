@@ -13,7 +13,7 @@ public struct Game: Identifiable, Codable, Hashable, Sendable {
     public var cylinderMapId: UUID?
     public var endAt: Date
     public var startAt: Date
-    public var scoringType: String
+    public var scoringType: ScoringType
     public var teams: [Team]
     public var status: Game.Status
     
@@ -31,7 +31,7 @@ public struct Game: Identifiable, Codable, Hashable, Sendable {
                 cylinderMapId: UUID? = nil,
                 startAt: Date,
                 endAt: Date,
-                scoringType: String,
+                scoringType: ScoringType,
                 teams: [Team] = [],
                 status: Game.Status) {
         self.id = id
