@@ -45,7 +45,7 @@ public struct ProfileResponse: Codable, Sendable {
     }
 }
 
-public struct UpsertProfileInput: Encodable {
+public struct UpsertProfileInput: Codable, Sendable {
     public let displayName: String
     public let bio: String?
     

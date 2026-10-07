@@ -29,4 +29,3 @@ public struct CreateCylinderRequest: Codable, Sendable {
         self.colorRaw = colorRaw
     }
 }
-
