@@ -9,6 +9,6 @@ import pgCtfKit
 import Vapor
 
 extension ScoringType {
-    static let schema = "scoring_types"
-    static var space: String? { Application.spaceSpec }
+    public static let schema = "scoring_types"
+    public static var space: String? { Application.spaceSpec }
 }

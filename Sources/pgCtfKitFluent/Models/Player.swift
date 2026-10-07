@@ -95,23 +95,23 @@ extension PlayerModel {
     public static let schema = "players"
     public static var space: String? { Application.spaceSpec }
 
-    enum FieldKeys {
-        static let id: FieldKey = "id"
-        static let name: FieldKey = "name"
-        static let userId: FieldKey = "user_id"
-        static let teamId: FieldKey = "team_id"
-        static let locations: FieldKey = "locations"
+    public enum FieldKeys {
+        public static let id: FieldKey = "id"
+        public static let name: FieldKey = "name"
+        public static let userId: FieldKey = "user_id"
+        public static let teamId: FieldKey = "team_id"
+        public static let locations: FieldKey = "locations"
 
-        static let createdAt: FieldKey = "created_at"
-        static let updatedAt: FieldKey = "updated_at"
-        static let deletedAt: FieldKey = "deleted_at"
+        public static let createdAt: FieldKey = "created_at"
+        public static let updatedAt: FieldKey = "updated_at"
+        public static let deletedAt: FieldKey = "deleted_at"
     }
 
-    enum ValidationKeys {
-        static let id: BasicCodingKey = "id"
-        static let name: BasicCodingKey = "name"
-        static let userId: BasicCodingKey = "user_id"
-        static let teamId: BasicCodingKey = "teamId"
+    public enum ValidationKeys {
+        public static let id: BasicCodingKey = "id"
+        public static let name: BasicCodingKey = "name"
+        public static let userId: BasicCodingKey = "user_id"
+        public static let teamId: BasicCodingKey = "teamId"
     }
 }
 

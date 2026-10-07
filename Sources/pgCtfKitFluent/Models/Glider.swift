@@ -71,17 +71,17 @@ extension GliderModel {
     public static let schema = "gliders"
     public static var space: String? { Application.spaceSpec }
 
-    enum FieldKeys {
-        static let id: FieldKey = "id"
-        static let brand: FieldKey = "brand"
-        static let model: FieldKey = "model"
-        static let size: FieldKey = "size"
-        static let colorName: FieldKey = "colorName"
-        static let colors: FieldKey = "colors"
+    public enum FieldKeys {
+        public static let id: FieldKey = "id"
+        public static let brand: FieldKey = "brand"
+        public static let model: FieldKey = "model"
+        public static let size: FieldKey = "size"
+        public static let colorName: FieldKey = "colorName"
+        public static let colors: FieldKey = "colors"
 
-        static let createdAt: FieldKey = "created_at"
-        static let updatedAt: FieldKey = "updated_at"
-        static let deletedAt: FieldKey = "deleted_at"
+        public static let createdAt: FieldKey = "created_at"
+        public static let updatedAt: FieldKey = "updated_at"
+        public static let deletedAt: FieldKey = "deleted_at"
     }
 }
 

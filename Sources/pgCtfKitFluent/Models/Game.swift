@@ -76,28 +76,28 @@ extension GameModel {
     public static let schema = "games"
     public static var space: String? { Application.spaceSpec }
 
-    enum FieldKeys {
-        static let id: FieldKey = "id"
-        static let name: FieldKey = "name"
-        static let startAt: FieldKey = "start_at"
-        static let endAt: FieldKey = "end_at"
-        static let scoringType: FieldKey = "scoring_type"
-        static let cylinderMapId: FieldKey = "cylinder_map_id"
-        static let status: FieldKey = "status"
+    public enum FieldKeys {
+        public static let id: FieldKey = "id"
+        public static let name: FieldKey = "name"
+        public static let startAt: FieldKey = "start_at"
+        public static let endAt: FieldKey = "end_at"
+        public static let scoringType: FieldKey = "scoring_type"
+        public static let cylinderMapId: FieldKey = "cylinder_map_id"
+        public static let status: FieldKey = "status"
 
-        static let createdAt: FieldKey = "created_at"
-        static let updatedAt: FieldKey = "updated_at"
-        static let deletedAt: FieldKey = "deleted_at"
+        public static let createdAt: FieldKey = "created_at"
+        public static let updatedAt: FieldKey = "updated_at"
+        public static let deletedAt: FieldKey = "deleted_at"
     }
 
-    enum ValidationKeys {
-        static let id: BasicCodingKey = "id"
-        static let name: BasicCodingKey = "name"
-        static let startAt: BasicCodingKey = "startAt"
-        static let endAt: BasicCodingKey = "endAt"
-        static let scoringType: BasicCodingKey = "scoringType"
-        static let cylinderMapId: BasicCodingKey = "cylinderMapId"
-        static let status: BasicCodingKey = "status"
+    public enum ValidationKeys {
+        public static let id: BasicCodingKey = "id"
+        public static let name: BasicCodingKey = "name"
+        public static let startAt: BasicCodingKey = "startAt"
+        public static let endAt: BasicCodingKey = "endAt"
+        public static let scoringType: BasicCodingKey = "scoringType"
+        public static let cylinderMapId: BasicCodingKey = "cylinderMapId"
+        public static let status: BasicCodingKey = "status"
     }
 }
 

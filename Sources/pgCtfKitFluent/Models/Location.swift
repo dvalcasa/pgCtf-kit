@@ -71,26 +71,26 @@ extension LocationModel {
     public static let schema = "locations"
     public static var space: String? { Application.spaceSpec }
 
-    enum FieldKeys {
-        static let id: FieldKey = "id"
-        static let latitude: FieldKey = "latitude"
-        static let longitude: FieldKey = "longitude"
-        static let altitude: FieldKey = "altitude"
-        static let timestamp: FieldKey = "timestamp"
-        static let playerId: FieldKey = "player_id"
+    public enum FieldKeys {
+        public static let id: FieldKey = "id"
+        public static let latitude: FieldKey = "latitude"
+        public static let longitude: FieldKey = "longitude"
+        public static let altitude: FieldKey = "altitude"
+        public static let timestamp: FieldKey = "timestamp"
+        public static let playerId: FieldKey = "player_id"
 
-        static let createdAt: FieldKey = "created_at"
-        static let updatedAt: FieldKey = "updated_at"
-        static let deletedAt: FieldKey = "deleted_at"
+        public static let createdAt: FieldKey = "created_at"
+        public static let updatedAt: FieldKey = "updated_at"
+        public static let deletedAt: FieldKey = "deleted_at"
     }
     
-    enum ValidationKeys {
-        static let id: BasicCodingKey = "id"
-        static let latitude: BasicCodingKey = "latitude"
-        static let longitude: BasicCodingKey = "longitude"
-        static let altitude: BasicCodingKey = "altitude"
-        static let timestamp: BasicCodingKey = "timestamp"
-        static let playerId: BasicCodingKey = "playerId"
+    public enum ValidationKeys {
+        public static let id: BasicCodingKey = "id"
+        public static let latitude: BasicCodingKey = "latitude"
+        public static let longitude: BasicCodingKey = "longitude"
+        public static let altitude: BasicCodingKey = "altitude"
+        public static let timestamp: BasicCodingKey = "timestamp"
+        public static let playerId: BasicCodingKey = "playerId"
     }
 }
 

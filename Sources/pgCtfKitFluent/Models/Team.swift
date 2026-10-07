@@ -69,25 +69,25 @@ extension TeamModel {
     public static let schema = "teams"
     public static var space: String? { Application.spaceSpec }
 
-    enum FieldKeys {
-        static let id: FieldKey = "id"
-        static let name: FieldKey = "name"
-        static let color: FieldKey = "color"
-        static let score: FieldKey = "score"
-        static let nbPlayersMax: FieldKey = "nb_players_max"
-        static let gameId: FieldKey = "game_id"
+    public enum FieldKeys {
+        public static let id: FieldKey = "id"
+        public static let name: FieldKey = "name"
+        public static let color: FieldKey = "color"
+        public static let score: FieldKey = "score"
+        public static let nbPlayersMax: FieldKey = "nb_players_max"
+        public static let gameId: FieldKey = "game_id"
 
-        static let createdAt: FieldKey = "created_at"
-        static let updatedAt: FieldKey = "updated_at"
-        static let deletedAt: FieldKey = "deleted_at"
+        public static let createdAt: FieldKey = "created_at"
+        public static let updatedAt: FieldKey = "updated_at"
+        public static let deletedAt: FieldKey = "deleted_at"
     }
     
-    enum ValidationKeys {
-        static let name: BasicCodingKey = "name"
-        static let color: BasicCodingKey = "color"
-        static let score: BasicCodingKey = "score"
-        static let nbPlayersMax: BasicCodingKey = "nbPlayersMax"
-        static let gameId: BasicCodingKey = "gameId"
+    public enum ValidationKeys {
+        public static let name: BasicCodingKey = "name"
+        public static let color: BasicCodingKey = "color"
+        public static let score: BasicCodingKey = "score"
+        public static let nbPlayersMax: BasicCodingKey = "nbPlayersMax"
+        public static let gameId: BasicCodingKey = "gameId"
     }
 }
 

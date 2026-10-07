@@ -128,27 +128,27 @@ extension CylinderModel {
     public static let schema = "cylinders"
     public static var space: String? { Application.spaceSpec }
 
-    enum FieldKeys {
-        static let id: FieldKey = "id"
-        static let rank: FieldKey = "rank"
-        static let latitude: FieldKey = "latitude"
-        static let longitude: FieldKey = "longitude"
-        static let radius: FieldKey = "radius"
-        static let colorRaw: FieldKey = "colorRaw"
-        static let cylinderMapID: FieldKey = "cylinder_map_id"
+    public enum FieldKeys {
+        public static let id: FieldKey = "id"
+        public static let rank: FieldKey = "rank"
+        public static let latitude: FieldKey = "latitude"
+        public static let longitude: FieldKey = "longitude"
+        public static let radius: FieldKey = "radius"
+        public static let colorRaw: FieldKey = "colorRaw"
+        public static let cylinderMapID: FieldKey = "cylinder_map_id"
 
-        static let createdAt: FieldKey = "created_at"
-        static let updatedAt: FieldKey = "updated_at"
-        static let deletedAt: FieldKey = "deleted_at"
+        public static let createdAt: FieldKey = "created_at"
+        public static let updatedAt: FieldKey = "updated_at"
+        public static let deletedAt: FieldKey = "deleted_at"
     }
     
-    enum ValidationKeys {
-        static let id: BasicCodingKey = "id"
-        static let rank: BasicCodingKey = "rank"
-        static let latitude: BasicCodingKey = "latitude"
-        static let longitude: BasicCodingKey = "longitude"
-        static let radius: BasicCodingKey = "radius"
-        static let cylinderMapID: BasicCodingKey = "cylinderMapId"
+    public enum ValidationKeys {
+        public static let id: BasicCodingKey = "id"
+        public static let rank: BasicCodingKey = "rank"
+        public static let latitude: BasicCodingKey = "latitude"
+        public static let longitude: BasicCodingKey = "longitude"
+        public static let radius: BasicCodingKey = "radius"
+        public static let cylinderMapID: BasicCodingKey = "cylinderMapId"
     }
 }
 

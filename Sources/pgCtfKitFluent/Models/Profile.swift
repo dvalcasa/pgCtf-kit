@@ -117,35 +117,35 @@ extension ProfileModel {
         }
     }
     
-    enum FieldKeys {
-        static let id: FieldKey = "id"
-        static let userId: FieldKey = "user_id"
-        static let username: FieldKey = "username"
-        static let email: FieldKey = "email"
-        static let firstName: FieldKey = "first_name"
-        static let lastName: FieldKey = "last_name"
-        static let playerName: FieldKey = "player_name"
-        static let gliderId: FieldKey = "glider_id"
-        static let isAdmin: FieldKey = "is_admin"
-        static let status: FieldKey = "status"
-        static let isRestricted: FieldKey = "is_restricted"
+    public enum FieldKeys {
+        public static let id: FieldKey = "id"
+        public static let userId: FieldKey = "user_id"
+        public static let username: FieldKey = "username"
+        public static let email: FieldKey = "email"
+        public static let firstName: FieldKey = "first_name"
+        public static let lastName: FieldKey = "last_name"
+        public static let playerName: FieldKey = "player_name"
+        public static let gliderId: FieldKey = "glider_id"
+        public static let isAdmin: FieldKey = "is_admin"
+        public static let status: FieldKey = "status"
+        public static let isRestricted: FieldKey = "is_restricted"
         
-        static let createdAt: FieldKey = "created_at"
-        static let updatedAt: FieldKey = "updated_at"
-        static let deletedAt: FieldKey = "deleted_at"
+        public static let createdAt: FieldKey = "created_at"
+        public static let updatedAt: FieldKey = "updated_at"
+        public static let deletedAt: FieldKey = "deleted_at"
     }
     
-    enum ValidationKeys {
-        static let id: BasicCodingKey = "id"
-        static let username: BasicCodingKey = "username"
-        static let password: BasicCodingKey = "password"
-        static let firstName: BasicCodingKey = "firstName"
-        static let lastName: BasicCodingKey = "lastName"
-        static let playerName: BasicCodingKey = "playerName"
-        static let gliderId: BasicCodingKey = "gliderId"
-        static let email: BasicCodingKey = "email"
-        static let isAdmin: BasicCodingKey = "isAdmin"
-        static let isRestricted: BasicCodingKey = "isRestricted"
+    public enum ValidationKeys {
+        public static let id: BasicCodingKey = "id"
+        public static let username: BasicCodingKey = "username"
+        public static let password: BasicCodingKey = "password"
+        public static let firstName: BasicCodingKey = "firstName"
+        public static let lastName: BasicCodingKey = "lastName"
+        public static let playerName: BasicCodingKey = "playerName"
+        public static let gliderId: BasicCodingKey = "gliderId"
+        public static let email: BasicCodingKey = "email"
+        public static let isAdmin: BasicCodingKey = "isAdmin"
+        public static let isRestricted: BasicCodingKey = "isRestricted"
     }
 }
 

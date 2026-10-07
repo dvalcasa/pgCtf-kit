@@ -102,15 +102,15 @@ extension CylinderMapModel {
     public static let schema = "cylinders_map"
     public static var space: String? { Application.spaceSpec }
 
-    enum FieldKeys {
-        static let id: FieldKey = "id"
-        static let name: FieldKey = "name"
-        static let description: FieldKey = "description"
-        static let imageData: FieldKey = "image"
+    public enum FieldKeys {
+        public static let id: FieldKey = "id"
+        public static let name: FieldKey = "name"
+        public static let description: FieldKey = "description"
+        public static let imageData: FieldKey = "image"
 
-        static let createdAt: FieldKey = "created_at"
-        static let updatedAt: FieldKey = "updated_at"
-        static let deletedAt: FieldKey = "deleted_at"
+        public static let createdAt: FieldKey = "created_at"
+        public static let updatedAt: FieldKey = "updated_at"
+        public static let deletedAt: FieldKey = "deleted_at"
     }
 }
 
