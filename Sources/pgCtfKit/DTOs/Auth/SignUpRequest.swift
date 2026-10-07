@@ -14,7 +14,7 @@ public struct SignUpRequest: Codable, Sendable {
     public let firstName: String?
     public let lastName: String?
     public let playerName: String?
-    public let gliderId: UUID?
+    public let gliderID: UUID?
     public let isRestricted: Bool?
     
     public init(username: String,
@@ -23,7 +23,7 @@ public struct SignUpRequest: Codable, Sendable {
                 firstName: String? = nil,
                 lastName: String? = nil,
                 playerName: String? = nil,
-                gliderId: UUID? = nil,
+                gliderID: UUID? = nil,
                 isRestricted: Bool? = true) {
         self.username = username
         self.password = password
@@ -31,7 +31,19 @@ public struct SignUpRequest: Codable, Sendable {
         self.firstName = firstName
         self.lastName = lastName
         self.playerName = playerName
-        self.gliderId = gliderId
+        self.gliderID = gliderID
         self.isRestricted = isRestricted
+    }
+}
+
+extension SignUpRequest {
+    public func toModel() -> Profile {
+        .init(
+            userId: UUID(),
+            username: username,
+            email: email,
+            isAdmin: false,
+            status: .notSubscribe,
+            isRestricted: isRestricted ?? true)
     }
 }

@@ -1,0 +1,137 @@
+//
+//  Glider.swift
+//  pgCtf
+//
+//  Created by Didier Valcasara on 20/12/2024.
+//
+
+import Fluent
+import Vapor
+import pgCtfKit
+
+public final class GliderModel: Model, @unchecked Sendable {
+
+    @ID(key: .id)
+    public var id: UUID?
+
+    @Field(key: FieldKeys.brand)
+    public var brand: String
+
+    @Field(key: FieldKeys.model)
+    public var model: String
+
+    @Field(key: FieldKeys.size)
+    public var size: String
+
+    @Field(key: FieldKeys.colorName)
+    public var colorName: String
+    
+    @OptionalField(key: FieldKeys.colors)
+    public var colors: [Int]?
+
+    @Children(for: \.$glider)
+    public var users: [ProfileModel]
+
+    @Timestamp(key: FieldKeys.createdAt, on: .create)
+    var createdAt: Date?
+
+    @Timestamp(key: FieldKeys.updatedAt, on: .update)
+    var updatedAt: Date?
+
+    @Timestamp(key: FieldKeys.deletedAt, on: .delete)
+    var deletedAt: Date?
+
+    public init() {}
+
+    public init(id: UUID? = nil,
+                brand: String,
+                model: String,
+                size: String,
+                colorName: String,
+                colors: [Int]? = nil) {
+        self.id = id
+        self.brand = brand
+        self.model = model
+        self.size = size
+        self.colorName = colorName
+        self.colors = colors
+    }
+    
+    public func toDTO() throws -> Glider {
+        .init(id: try requireID(),
+              brand: brand,
+              model: model,
+              size: size,
+              colorName: colorName,
+              colors: colors)
+    }
+}
+
+extension GliderModel {
+    public static let schema = "gliders"
+    public static var space: String? { Application.spaceSpec }
+
+    enum FieldKeys {
+        static let id: FieldKey = "id"
+        static let brand: FieldKey = "brand"
+        static let model: FieldKey = "model"
+        static let size: FieldKey = "size"
+        static let colorName: FieldKey = "colorName"
+        static let colors: FieldKey = "colors"
+
+        static let createdAt: FieldKey = "created_at"
+        static let updatedAt: FieldKey = "updated_at"
+        static let deletedAt: FieldKey = "deleted_at"
+    }
+}
+
+extension GliderModel {
+    public final class Public: Content {
+        let id: UUID?
+        let brand: String
+        let model: String
+        let size: String
+        let colorName: String
+        let colors: [Int]?
+
+        public init(id: UUID?,
+             brand: String,
+             model: String,
+             size: String,
+             colorName: String,
+             colors: [Int]? = nil) {
+            self.id = id
+            self.brand = brand
+            self.model = model
+            self.size = size
+            self.colorName = colorName
+            self.colors = colors
+        }
+    }
+}
+
+extension GliderModel {
+    public func toPublic() -> GliderModel.Public {
+        .init(id: id,
+              brand: brand,
+              model: model,
+              size: size,
+              colorName: colorName,
+              colors: colors)
+    }
+
+    public func toResonse() -> GliderResponse {
+        .init(id: id,
+              brand: brand,
+              model: model,
+              size: size,
+              colorName: colorName,
+              colors: colors)
+    }
+}
+
+extension Collection where Element: GliderModel {
+    public func toPublic() -> [GliderModel.Public] {
+        return self.map { $0.toPublic() }
+    }
+}

@@ -12,17 +12,17 @@ public struct CreateLocationRequest: Codable, Sendable {
     public let longitude: Double
     public let altitude: Double
     public let timestamp: Date
-    public let playerId: UUID
+    public let playerID: UUID
     
     public init(latitude: Double,
                 longitude: Double,
                 altitude: Double,
                 timestamp: Date,
-                playerId: UUID) {
+                playerID: UUID) {
         self.latitude = latitude
         self.longitude = longitude
         self.altitude = altitude
         self.timestamp = timestamp
-        self.playerId = playerId
+        self.playerID = playerID
     }
 }

@@ -14,7 +14,7 @@ public struct User: Identifiable, Codable, Hashable {
     public let firstName: String?
     public let lastName: String?
     public let playerName: String?
-    public let gliderId: UUID?
+    public let glider: Glider?
     public let status: User.Status
     public let isRestricted: Bool
     public let isAdmin: Bool
@@ -25,7 +25,7 @@ public struct User: Identifiable, Codable, Hashable {
                 firstName: String? = nil,
                 lastName: String? = nil,
                 playerName: String? = nil,
-                gliderId: UUID? = nil,
+                glider: Glider? = nil,
                 isAdmin: Bool,
                 status: User.Status,
                 isRestricted: Bool) {
@@ -38,7 +38,7 @@ public struct User: Identifiable, Codable, Hashable {
         self.isAdmin = isAdmin
         self.status = status
         self.isRestricted = isRestricted
-        self.gliderId = gliderId
+        self.glider = glider
     }
     
     public enum Status: Int, Codable, Sendable {

@@ -11,7 +11,7 @@ public struct Player: Identifiable, Codable, Hashable, Sendable {
     public let id: UUID?
     public let name: String
     public let user: Profile
-    public let teamId: UUID?
+    public let team: Team?
     public let locations: [Location]
     
     public var longitude: Double? {
@@ -41,12 +41,12 @@ public struct Player: Identifiable, Codable, Hashable, Sendable {
     public init(id: UUID? = nil,
                 name: String,
                 user: Profile,
-                teamId: UUID? = nil,
+                team: Team? = nil,
                 locations: [Location] = []) {
         self.id = id
         self.name = name
         self.user = user
-        self.teamId = teamId
+        self.team = team
         self.locations = locations
     }
 }

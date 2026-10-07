@@ -9,14 +9,14 @@ import Foundation
 
 public struct CreatePlayerRequest: Codable, Sendable {
     public let name: String
-    public let userId: UUID
-    public let teamId: UUID?
+    public let profileID: UUID
+    public let teamID: UUID?
     
     public init(name: String,
-                userId: UUID,
-                teamId: UUID? = nil) {
+                profileID: UUID,
+                teamID: UUID? = nil) {
         self.name = name
-        self.userId = userId
-        self.teamId = teamId
+        self.profileID = profileID
+        self.teamID = teamID
     }
 }

@@ -13,7 +13,7 @@ public struct UpdateUserRequest: Codable, Sendable {
     public let lastName: String?
     public let playerName: String?
     public let email: String?
-    public let gliderId: UUID?
+    public let gliderID: UUID?
     public let isRestricted: Bool?
     
     public init(username: String? = nil,
@@ -21,14 +21,14 @@ public struct UpdateUserRequest: Codable, Sendable {
                 firstName: String? = nil,
                 lastName: String? = nil,
                 playerName: String? = nil,
-                gliderId: UUID? = nil,
+                gliderID: UUID? = nil,
                 isRestricted: Bool? = nil) {
         self.username = username
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
         self.playerName = playerName
-        self.gliderId = gliderId
+        self.gliderID = gliderID
         self.isRestricted = isRestricted
     }
 }

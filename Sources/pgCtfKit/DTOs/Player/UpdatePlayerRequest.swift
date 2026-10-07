@@ -9,12 +9,12 @@ import Foundation
 
 public struct UpdatePlayerRequest: Codable, Sendable {
     public let name: String?
-    public let teamId: UUID?
+    public let teamID: UUID?
     
     public init(name: String? = nil,
-                teamId: UUID? = nil) {
+                teamID: UUID? = nil) {
         self.name = name
-        self.teamId = teamId
+        self.teamID = teamID
     }
 }
 

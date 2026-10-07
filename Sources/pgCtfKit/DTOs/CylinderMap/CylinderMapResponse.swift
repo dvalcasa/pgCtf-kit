@@ -24,11 +24,9 @@ public struct CylinderMapResponse: Codable, Sendable {
     }
     
     public func toModel() -> CylinderMap {
-        CylinderMap(
-            id: id,
-            name: name,
-            description: description,
-            imageData: imageData
-        )
+        .init(id: id,
+              name: name,
+              description: description,
+              imageData: imageData)
     }
 }

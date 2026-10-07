@@ -41,18 +41,3 @@ public struct UserResponse: Codable, Sendable {
         self.isRestricted = isRestricted
     }
 }
-
-extension UserResponse {
-    public func toModel() -> User {
-        User(id: id,
-             username: username,
-             email: email,
-             firstName: firstName,
-             lastName: lastName,
-             playerName: playerName,
-             gliderId: gliderId,
-             isAdmin: isAdmin,
-             status: status,
-             isRestricted: isRestricted)
-    }
-}

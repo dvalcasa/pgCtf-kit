@@ -10,16 +10,16 @@ import Foundation
 public struct PlayerResponse: Codable, Sendable {
     public let id: UUID?
     public let name: String
-    public let userId: UUID
-    public let teamId: UUID?
+    public let profileID: UUID
+    public let teamID: UUID?
     
     public init(id: UUID?,
                 name: String,
-                userId: UUID,
-                teamId: UUID? = nil) {
+                profileID: UUID,
+                teamID: UUID? = nil) {
         self.id = id
         self.name = name
-        self.userId = userId
-        self.teamId = teamId
+        self.profileID = profileID
+        self.teamID = teamID
     }
 }

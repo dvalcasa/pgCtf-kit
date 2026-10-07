@@ -10,3 +10,13 @@ import Vapor
 
 extension CreateCylinderRequest: Content {}
 
+extension CreateCylinderRequest {
+    public func toModel() -> CylinderModel {
+        .init(rank: rank,
+              latitude: latitude,
+              longitude: longitude,
+              radius: radius,
+              colorRaw: colorRaw,
+              cylinderMapID: cylinderMapID)
+    }
+}

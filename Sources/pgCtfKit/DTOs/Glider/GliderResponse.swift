@@ -30,12 +30,12 @@ public struct GliderResponse: Codable, Sendable {
     }
     
     public func toModel() -> Glider {
-        Glider(id: id,
-               brand: brand,
-               model: model,
-               size: size,
-               colorName: colorName,
-               colors: colors)
+        .init(id: id,
+              brand: brand,
+              model: model,
+              size: size,
+              colorName: colorName,
+              colors: colors)
     }
 
 }

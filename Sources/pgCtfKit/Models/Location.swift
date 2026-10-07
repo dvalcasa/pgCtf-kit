@@ -13,19 +13,19 @@ public struct Location: Identifiable, Codable, Hashable, Sendable {
     public let latitude: Double
     public let altitude: Double
     public let timestamp: Date
-    public let playerId: UUID
+    public let player: Player
     
     public init(id: UUID? = nil,
                 longitude: Double,
                 latitude: Double,
                 altitude: Double,
                 timestamp: Date,
-                playerId: UUID) {
+                player: Player) {
         self.id = id
         self.longitude = longitude
         self.latitude = latitude
         self.altitude = altitude
         self.timestamp = timestamp
-        self.playerId = playerId
+        self.player = player
     }
 }

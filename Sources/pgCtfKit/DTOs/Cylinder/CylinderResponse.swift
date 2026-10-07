@@ -14,7 +14,7 @@ public struct CylinderResponse: Codable, Sendable {
     public let latitude: Double
     public let radius: Double
     public let colorRaw: Int
-    public let cylinderMapId: UUID?
+    public let cylinderMapID: UUID?
     
     public init(id: UUID? = nil,
                 rank: Int,
@@ -22,26 +22,14 @@ public struct CylinderResponse: Codable, Sendable {
                 latitude: Double,
                 radius: Double,
                 colorRaw: Int,
-                cylinderMapId: UUID? = nil) {
+                cylinderMapID: UUID? = nil) {
         self.id = id
         self.rank = rank
         self.longitude = longitude
         self.latitude = latitude
         self.radius = radius
         self.colorRaw = colorRaw
-        self.cylinderMapId = cylinderMapId
+        self.cylinderMapID = cylinderMapID
     }
 }
 
-extension CylinderResponse {
-    public func toModel() -> Cylinder {
-        Cylinder(
-            id: id,
-            rank: rank,
-            longitude: longitude,
-            latitude: latitude,
-            radius: radius,
-            cylinderMapId: cylinderMapId
-        )
-    }
-}

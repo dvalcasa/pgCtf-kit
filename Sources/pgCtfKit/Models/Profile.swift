@@ -15,7 +15,7 @@ public struct Profile: Identifiable, Codable, Hashable, Sendable {
     public let firstName: String?
     public let lastName: String?
     public let playerName: String?
-    public let gliderId: UUID?
+    public let glider: Glider?
     public let status: Profile.Status
     public let isRestricted: Bool
     public let isAdmin: Bool
@@ -27,7 +27,7 @@ public struct Profile: Identifiable, Codable, Hashable, Sendable {
                 firstName: String? = nil,
                 lastName: String? = nil,
                 playerName: String? = nil,
-                gliderId: UUID? = nil,
+                glider: Glider? = nil,
                 isAdmin: Bool,
                 status: Profile.Status,
                 isRestricted: Bool) {
@@ -41,12 +41,12 @@ public struct Profile: Identifiable, Codable, Hashable, Sendable {
         self.isAdmin = isAdmin
         self.status = status
         self.isRestricted = isRestricted
-        self.gliderId = gliderId
+        self.glider = glider
     }
 }
 
 extension Profile {
-    public enum Status: Int, Codable, Sendable {
+    public enum Status: String, CaseIterable, Codable, Sendable {
         case notSubscribe, waiting, activated
     }
 }

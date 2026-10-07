@@ -10,7 +10,7 @@ import Foundation
 public struct Game: Identifiable, Codable, Hashable, Sendable {
     public let id: UUID?
     public var name: String
-    public var cylinderMapId: UUID?
+    public var cylinderMap: CylinderMap?
     public var endAt: Date
     public var startAt: Date
     public var scoringType: ScoringType
@@ -26,9 +26,18 @@ public struct Game: Identifiable, Codable, Hashable, Sendable {
         }
     }
     
+    public var isFinished: Bool {
+        switch status {
+            case .ended, .closed:
+                return true;
+            default:
+                return false
+        }
+    }
+    
     public init(id: UUID? = nil,
                 name: String,
-                cylinderMapId: UUID? = nil,
+                cylinderMap: CylinderMap? = nil,
                 startAt: Date,
                 endAt: Date,
                 scoringType: ScoringType,
@@ -36,15 +45,17 @@ public struct Game: Identifiable, Codable, Hashable, Sendable {
                 status: Game.Status) {
         self.id = id
         self.name = name
-        self.cylinderMapId = cylinderMapId
+        self.cylinderMap = cylinderMap
         self.endAt = endAt
         self.startAt = startAt
         self.scoringType = scoringType
         self.teams = teams
         self.status = status
     }
-    
-    public enum Status: Int, Codable, Sendable {
+}
+
+extension Game {
+    public enum Status: String, CaseIterable, Codable, Sendable {
         case new, created, started, ended, closed
     }
 }

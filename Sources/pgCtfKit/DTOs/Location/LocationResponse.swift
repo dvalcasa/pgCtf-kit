@@ -13,19 +13,19 @@ public struct LocationResponse: Codable, Sendable {
     public let longitude: Double
     public let altitude: Double
     public let timestamp: String
-    public let playerId: UUID
+    public let playerID: UUID
     
     public init(id: UUID?,
                 latitude: Double,
                 longitude: Double,
                 altitude: Double,
                 timestamp: String,
-                playerId: UUID) {
+                playerID: UUID) {
         self.id = id
         self.latitude = latitude
         self.longitude = longitude
         self.altitude = altitude
         self.timestamp = timestamp
-        self.playerId = playerId
+        self.playerID = playerID
     }
 }

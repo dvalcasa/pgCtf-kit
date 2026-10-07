@@ -12,20 +12,20 @@ public struct CreateCylinderRequest: Codable, Sendable {
     public let latitude: Double
     public let longitude: Double
     public let radius: Double
-    public let cylinderMapId: UUID
+    public let cylinderMapID: UUID
     public let colorRaw: Int
     
     public init(rank: Int,
                 latitude: Double,
                 longitude: Double,
                 radius: Double,
-                cylinderMapId: UUID,
+                cylinderMapID: UUID,
                 colorRaw: Int) {
         self.rank = rank
         self.latitude = latitude
         self.longitude = longitude
         self.radius = radius
-        self.cylinderMapId = cylinderMapId
+        self.cylinderMapID = cylinderMapID
         self.colorRaw = colorRaw
     }
 }

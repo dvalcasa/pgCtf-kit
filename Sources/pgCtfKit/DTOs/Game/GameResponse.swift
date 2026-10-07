@@ -13,7 +13,7 @@ public struct GameResponse: Codable, Sendable {
     public let scoringType: ScoringType
     public let startAt: String
     public let endAt: String
-    public let cylinderMapId: UUID?
+    public let cylinderMapID: UUID?
     public let status: Game.Status
     
     public init(id: UUID? = nil,
@@ -21,27 +21,14 @@ public struct GameResponse: Codable, Sendable {
                 scoringType: ScoringType,
                 startAt: String,
                 endAt: String,
-                cylinderMapId: UUID?,
+                cylinderMapID: UUID?,
                 status: Game.Status) {
         self.id = id
         self.name = name
         self.scoringType = scoringType
         self.startAt = startAt
         self.endAt = endAt
-        self.cylinderMapId = cylinderMapId
+        self.cylinderMapID = cylinderMapID
         self.status = status
-    }
-}
-
-extension GameResponse {
-    public func toModel() -> Game {
-        return Game(id: id,
-                    name: name,
-                    cylinderMapId: cylinderMapId,
-                    startAt: startAt.ISO8601FormatToDate(),
-                    endAt: endAt.ISO8601FormatToDate(),
-                    scoringType: scoringType,
-                    status: status
-        )
     }
 }
