@@ -33,3 +33,13 @@ public struct CylinderResponse: Codable, Sendable {
     }
 }
 
+extension CylinderResponse {
+    public func toDTO() -> Cylinder {
+        .init(id: id,
+              rank: rank,
+              longitude: longitude,
+              latitude: latitude,
+              radius: radius,
+              colorRaw: colorRaw)
+    }
+}

@@ -11,7 +11,7 @@ import Vapor
 extension GameResponse: Content {}
 
 extension GameResponse {
-    public func toDTO() throws -> GameModel {
+    public func toModel() throws -> GameModel {
         .init(id: id,
               name: name,
               scoringType: scoringType,
