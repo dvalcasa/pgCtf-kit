@@ -109,7 +109,11 @@ extension Collection where Element: GameModel {
     }
 }
 
+extension Game: Content {}
+
 extension Game.Status {
     public static let schema = "game_status"
     public static var space: String? { Application.spaceSpec }
 }
+
+extension Game.Status: Content {}

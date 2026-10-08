@@ -98,3 +98,5 @@ extension Collection where Element: TeamModel {
         return try self.map { try $0.toDTO() }
     }
 }
+
+extension Team: Content {}

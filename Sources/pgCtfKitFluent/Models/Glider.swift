@@ -92,3 +92,5 @@ extension Collection where Element: GliderModel {
         return try self.map { try $0.toDTO() }
     }
 }
+
+extension Glider: Content {}

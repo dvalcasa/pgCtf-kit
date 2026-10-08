@@ -12,3 +12,5 @@ extension ScoringType {
     public static let schema = "scoring_types"
     public static var space: String? { Application.spaceSpec }
 }
+
+extension ScoringType: Content {}

@@ -157,7 +157,11 @@ extension Collection where Element: ProfileModel {
     }
 }
 
+extension Profile: Content {}
+
 extension Profile.Status {
     public static let schema = "profile_status"
     public static var space: String? { Application.spaceSpec }
 }
+
+extension Profile.Status: Content {}

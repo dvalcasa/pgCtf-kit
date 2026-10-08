@@ -83,3 +83,5 @@ extension Collection where Element: PlayerModel {
         return try self.map { try $0.toDTO() }
     }
 }
+
+extension Player: Content {}

@@ -101,3 +101,5 @@ extension Collection where Element: LocationModel {
         return try self.map { try $0.toDTO() }
     }
 }
+
+extension Location: Content {}
