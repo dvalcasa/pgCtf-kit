@@ -5,7 +5,7 @@
 //  Created by Didier Valcasara on 07/11/2025.
 //
 
-import pgCtfKit
+@_exported import pgCtfKit
 import Vapor
 
 extension UpdateUserRequest: Content {}

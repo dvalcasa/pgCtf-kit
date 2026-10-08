@@ -98,13 +98,13 @@ extension CylinderModel {
 
 extension CylinderModel {
     public final class Public: Content {
-        let id: UUID?
-        let rank: Int
-        let latitude: Double
-        let longitude: Double
-        let radius: Double
-        let colorRaw: Int
-        let cylinderMapID: CylinderMapModel.IDValue?
+        public let id: UUID?
+        public let rank: Int
+        public let latitude: Double
+        public let longitude: Double
+        public let radius: Double
+        public let colorRaw: Int
+        public let cylinderMapID: CylinderMapModel.IDValue?
 
         public init(id: UUID?,
              rank: Int,

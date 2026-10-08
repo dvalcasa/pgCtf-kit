@@ -93,13 +93,13 @@ extension TeamModel {
 
 extension TeamModel {
     public final class Public: Content {
-        let id: UUID?
-        let name: String
-        let color: Int
-        let score: Int
-        let nbPlayersMax: Int?
-        let gameId: GameModel.IDValue?
-        let players: [PlayerModel.Public]
+        public let id: UUID?
+        public let name: String
+        public let color: Int
+        public  let score: Int
+        public let nbPlayersMax: Int?
+        public let gameId: GameModel.IDValue?
+        public let players: [PlayerModel.Public]
 
         init(id: UUID?,
              name: String,

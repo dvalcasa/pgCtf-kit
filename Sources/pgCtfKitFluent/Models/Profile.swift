@@ -182,17 +182,17 @@ extension ProfileModel {
 
 extension ProfileModel {
     public final class Public: Content {
-        let id: UUID?
-        let userId: UUID
-        let username: String
-        let email: String
-        let firstName: String?
-        let lastName: String?
-        let playerName: String?
-        let glider: GliderModel.Public?
-        let status: Profile.Status
-        let isAdmin: Bool
-        let isRestricted: Bool
+        public let id: UUID?
+        public let userId: UUID
+        public let username: String
+        public let email: String
+        public let firstName: String?
+        public let lastName: String?
+        public let playerName: String?
+        public let glider: GliderModel.Public?
+        public let status: Profile.Status
+        public let isAdmin: Bool
+        public let isRestricted: Bool
         
         public init(id: UUID?,
              userId: UUID,

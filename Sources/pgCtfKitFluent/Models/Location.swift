@@ -96,11 +96,11 @@ extension LocationModel {
 
 extension LocationModel {
     public final class Public: Content {
-        let id: UUID?
-        let latitude: Double
-        let longitude: Double
-        let altitude: Double
-        let timestamp: String
+        public let id: UUID?
+        public let latitude: Double
+        public let longitude: Double
+        public let altitude: Double
+        public let timestamp: String
 
         public init( id: UUID?,
               latitude: Double,

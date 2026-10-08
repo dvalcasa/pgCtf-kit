@@ -78,11 +78,11 @@ extension CylinderMapModel {
 
 extension CylinderMapModel {
     public final class Public: Content {
-        let id: UUID?
-        let name: String
-        let cylinders: [CylinderModel.Public]
-        let description: String?
-        let imageData: Data?
+        public let id: UUID?
+        public let name: String
+        public let cylinders: [CylinderModel.Public]
+        public let description: String?
+        public let imageData: Data?
 
         public init(id: UUID?,
              name: String,

@@ -71,11 +71,11 @@ extension PlayerModel {
 
 extension PlayerModel {
     public final class Public: Content {
-        let id: UUID?
-        let name: String
-        let user: ProfileModel.Public
-        let teamId: TeamModel.IDValue?
-        let locations: [LocationModel.Public]
+        public let id: UUID?
+        public let name: String
+        public let user: ProfileModel.Public
+        public let teamId: TeamModel.IDValue?
+        public let locations: [LocationModel.Public]
 
         public init(id: UUID?,
                     name: String,

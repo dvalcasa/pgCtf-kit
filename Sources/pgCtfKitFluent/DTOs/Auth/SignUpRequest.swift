@@ -5,7 +5,7 @@
 //  Created by Didier Valcasara on 05/07/2026.
 //
 
-import pgCtfKit
+@_exported import pgCtfKit
 import Vapor
 
 extension SignUpRequest: Content {}

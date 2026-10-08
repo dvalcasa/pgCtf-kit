@@ -87,12 +87,12 @@ extension GliderModel {
 
 extension GliderModel {
     public final class Public: Content {
-        let id: UUID?
-        let brand: String
-        let model: String
-        let size: String
-        let colorName: String
-        let colors: [Int]?
+        public let id: UUID?
+        public let brand: String
+        public let model: String
+        public let size: String
+        public let colorName: String
+        public let colors: [Int]?
 
         public init(id: UUID?,
              brand: String,

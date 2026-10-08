@@ -103,14 +103,14 @@ extension GameModel {
 
 extension GameModel {
     public final class Public: Content {
-        let id: UUID?
-        let name: String
-        let scoringType: ScoringType
-        let startAt: String
-        let endAt: String
-        let cylinderMapID: UUID?
-        let teams: [TeamModel.Public]
-        let status: Game.Status
+        public let id: UUID?
+        public let name: String
+        public let scoringType: ScoringType
+        public let startAt: String
+        public let endAt: String
+        public let cylinderMapID: UUID?
+        public let teams: [TeamModel.Public]
+        public let status: Game.Status
 
         public init(id: UUID? = nil,
              name: String,

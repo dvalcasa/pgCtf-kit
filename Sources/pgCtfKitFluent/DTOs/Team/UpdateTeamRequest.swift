@@ -1,5 +1,5 @@
 
-import pgCtfKit
+@_exported import pgCtfKit
 import Vapor
 
 extension UpdateTeamRequest: Content {}

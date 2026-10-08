@@ -5,7 +5,7 @@
 //  Created by Didier Valcasara on 12/02/2025.
 //
 
-import pgCtfKit
+@_exported import pgCtfKit
 import Vapor
 
 extension GameRequest: Content {}

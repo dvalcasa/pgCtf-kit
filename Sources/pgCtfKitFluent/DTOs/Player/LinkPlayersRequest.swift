@@ -5,7 +5,7 @@
 //  Created by Didier Valcasara on 14/04/2026.
 //
 
-import pgCtfKit
+@_exported import pgCtfKit
 import Vapor
 
 extension LinkPlayersRequest: Content {}

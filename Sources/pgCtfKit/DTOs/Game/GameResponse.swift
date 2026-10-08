@@ -32,3 +32,16 @@ public struct GameResponse: Codable, Sendable {
         self.status = status
     }
 }
+
+extension GameResponse {
+    public func toDTO() -> Game {
+        .init(
+            id: id,
+            name: name,
+            startAt: startAt.ISO8601FormatToDate(),
+            endAt: endAt.ISO8601FormatToDate(),
+            scoringType: scoringType,
+            status: status
+        )
+    }
+}
