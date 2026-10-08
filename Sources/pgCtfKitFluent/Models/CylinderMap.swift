@@ -75,4 +75,10 @@ extension CylinderMapModel {
     }
 }
 
+extension Collection where Element == CylinderMapModel {
+    public func toCollection() throws -> [CylinderMap] {
+        return try self.map { try $0.toDTO() }
+    }
+}
+
 extension CylinderMap: Content {}
