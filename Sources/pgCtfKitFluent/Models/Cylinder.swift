@@ -74,57 +74,6 @@ public final class CylinderModel: Model, @unchecked Sendable, Content {
 }
 
 extension CylinderModel {
-    public func toPublic() -> CylinderModel.Public {
-        .init(id: id,
-              rank: rank,
-              latitude: latitude,
-              longitude: longitude,
-              radius: radius,
-              colorRaw: colorRaw,
-              cylinderMapID: $cylinderMap.id)
-    }
-    
-    public func toResponse() -> CylinderResponse {
-        .init(id: id,
-              rank: rank,
-              longitude: longitude,
-              latitude: latitude,
-              radius: radius,
-              colorRaw: colorRaw,
-              cylinderMapID: $cylinderMap.id
-        )
-    }
-}
-
-extension CylinderModel {
-    public final class Public: Content {
-        public let id: UUID?
-        public let rank: Int
-        public let latitude: Double
-        public let longitude: Double
-        public let radius: Double
-        public let colorRaw: Int
-        public let cylinderMapID: CylinderMapModel.IDValue?
-
-        public init(id: UUID?,
-             rank: Int,
-             latitude: Double,
-             longitude: Double,
-             radius: Double,
-             colorRaw: Int,
-                    cylinderMapID: CylinderMapModel.IDValue? = nil) {
-            self.id = id
-            self.rank = rank
-            self.latitude = latitude
-            self.longitude = longitude
-            self.radius = radius
-            self.colorRaw = colorRaw
-            self.cylinderMapID = cylinderMapID
-        }
-    }
-}
-
-extension CylinderModel {
     public static let schema = "cylinders"
     public static var space: String? { Application.spaceSpec }
 
@@ -152,8 +101,4 @@ extension CylinderModel {
     }
 }
 
-extension Collection where Element: CylinderModel {
-    public func toPublic() -> [CylinderModel.Public] {
-        return self.map { $0.toPublic() }
-    }
-}
+extension Cylinder: Content {}

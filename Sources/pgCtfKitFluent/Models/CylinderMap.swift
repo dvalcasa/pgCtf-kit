@@ -60,45 +60,6 @@ public final class CylinderMapModel: Model, @unchecked Sendable {
 }
 
 extension CylinderMapModel {
-    public func toPublic() -> CylinderMapModel.Public {
-        .init(id: id,
-              name: name,
-              cylinders: cylinders,
-              description: description,
-              imageData: imageData)
-    }
-    
-    public func toResponse() -> CylinderMapResponse {
-        .init(id: id,
-              name: name,
-              description: description,
-              imageData: imageData)
-    }
-}
-
-extension CylinderMapModel {
-    public final class Public: Content {
-        public let id: UUID?
-        public let name: String
-        public let cylinders: [CylinderModel.Public]
-        public let description: String?
-        public let imageData: Data?
-
-        public init(id: UUID?,
-             name: String,
-             cylinders: [CylinderModel] = [],
-             description: String? = nil,
-             imageData: Data? = nil) {
-            self.id = id
-            self.name = name
-            self.cylinders = cylinders.toPublic()
-            self.description = description
-            self.imageData = imageData
-        }
-    }
-}
-
-extension CylinderMapModel {
     public static let schema = "cylinders_map"
     public static var space: String? { Application.spaceSpec }
 
@@ -114,8 +75,4 @@ extension CylinderMapModel {
     }
 }
 
-extension Collection where Element: CylinderMapModel {
-    public func toPublic() -> [CylinderMapModel.Public] {
-        return self.map { $0.toPublic() }
-    }
-}
+extension CylinderMap: Content {}
