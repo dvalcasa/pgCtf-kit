@@ -35,15 +35,3 @@ public struct SignUpRequest: Codable, Sendable {
         self.isRestricted = isRestricted
     }
 }
-
-extension SignUpRequest {
-    public func toModel() -> Profile {
-        .init(
-            userId: UUID(),
-            username: username,
-            email: email,
-            isAdmin: false,
-            status: .notSubscribe,
-            isRestricted: isRestricted ?? true)
-    }
-}
