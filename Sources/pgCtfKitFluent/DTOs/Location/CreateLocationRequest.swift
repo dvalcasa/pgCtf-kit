@@ -9,3 +9,13 @@
 import Vapor
 
 extension CreateLocationRequest: Content {}
+
+extension CreateLocationRequest {
+    public func toModel() -> LocationModel {
+        .init(latitude: latitude,
+              longitude: longitude,
+              altitude: altitude,
+              timestamp: timestamp,
+              playerID: playerID)
+    }
+}

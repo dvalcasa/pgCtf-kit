@@ -10,6 +10,19 @@ import Vapor
 
 extension SignUpRequest: Content {}
 
+extension SignUpRequest {
+    public func toModel() -> ProfileModel {
+        .init(userId: UUID(),
+              username: username,
+              email: email,
+              firstName: firstName,
+              lastName: lastName,
+              playerName: playerName,
+              gliderID: gliderID,
+              isRestricted: isRestricted)
+    }
+}
+
 extension SignUpRequest: Validatable {
     public static func validations(_ validations: inout Validations) {
         validations

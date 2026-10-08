@@ -35,12 +35,12 @@ public final class PlayerModel: Model, @unchecked Sendable {
 
     public init(id: UUID? = nil,
                 name: String,
-                userId: ProfileModel.IDValue,
-                teamId: TeamModel.IDValue? = nil) {
+                profileID: ProfileModel.IDValue,
+                teamID: TeamModel.IDValue? = nil) {
         self.id = id
         self.name = name
-        self.$user.id = userId
-        self.$team.id = teamId
+        self.$user.id = profileID
+        self.$team.id = teamID
     }
 }
 

@@ -5,11 +5,12 @@ import Vapor
 extension CreateGameRequest: Content {}
 
 extension CreateGameRequest {
-    public func toModel() -> Game {
+    public func toModel() -> GameModel {
         .init(name: name,
+              scoringType: scoringType,
               startAt: startAt,
               endAt: endAt,
-              scoringType: scoringType,
+              cylinderMapID: cylinderMapID,
               status: status)
     }
 }

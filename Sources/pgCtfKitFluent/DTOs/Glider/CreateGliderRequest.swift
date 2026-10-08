@@ -9,3 +9,13 @@
 import Vapor
 
 extension CreateGliderRequest: Content {}
+
+extension CreateGliderRequest {
+    public func toModel() -> GliderModel {
+        .init(brand: brand,
+              model: model,
+              size: size,
+              colorName: colorName,
+              colors: colors)
+    }
+}

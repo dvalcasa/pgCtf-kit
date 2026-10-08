@@ -59,16 +59,16 @@ public final class ProfileModel: Model, @unchecked Sendable {
     public init() {}
     
     public init(id: UUID? = nil,
-         userId: UUID,
-         username: String,
-         email: String,
-         firstName: String? = nil,
-         lastName: String? = nil,
-         playerName: String? = nil,
-         glider: GliderModel? = nil,
-         isAdmin: Bool,
-         status: Profile.Status,
-         isRestricted: Bool) {
+                userId: UUID,
+                username: String,
+                email: String,
+                firstName: String? = nil,
+                lastName: String? = nil,
+                playerName: String? = nil,
+                gliderID: GliderModel.IDValue? = nil,
+                isAdmin: Bool? = nil,
+                status: Profile.Status? = nil,
+                isRestricted: Bool? = nil) {
         self.id = id
         self.userId = userId
         self.username = username
@@ -76,10 +76,10 @@ public final class ProfileModel: Model, @unchecked Sendable {
         self.firstName = firstName
         self.lastName = lastName
         self.playerName = playerName
-        self.isAdmin = isAdmin
-        self.status = status
-        self.isRestricted = isRestricted
-        self.$glider.id = glider?.id
+        self.isAdmin = isAdmin ?? false
+        self.status = status ?? .notSubscribe
+        self.isRestricted = isRestricted ?? true
+        self.$glider.id = gliderID
     }
 }
 
