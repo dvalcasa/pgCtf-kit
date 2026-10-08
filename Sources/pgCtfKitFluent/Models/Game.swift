@@ -89,6 +89,24 @@ extension GameModel {
 }
 
 extension GameModel {
+    public var isStarted: Bool {
+        switch status {
+            case .new, .created:
+                return false;
+            default:
+                return true
+        }
+    }
+        
+    public var isFinished: Bool {
+        switch status {
+            case .ended, .closed:
+                return true;
+            default:
+                return false
+        }
+    }
+
     public func toDTO() throws -> Game {
         .init(
             id: try requireID(),
@@ -109,25 +127,7 @@ extension Collection where Element: GameModel {
     }
 }
 
-extension Game: Content {
-    public var isStarted: Bool {
-        switch status {
-            case .new, .created:
-                return false;
-            default:
-                return true
-        }
-    }
-    
-    public var isFinished: Bool {
-        switch status {
-            case .ended, .closed:
-                return true;
-            default:
-                return false
-        }
-    }
-}
+extension Game: Content {}
 
 extension Game.Status {
     public static let schema = "game_status"
