@@ -61,16 +61,6 @@ public final class CylinderModel: Model, @unchecked Sendable, Content {
         self.colorRaw = colorRaw
         self.$cylinderMap.id = cylinderMapID
     }
-    
-    public func toDTO() throws -> Cylinder {
-        .init(id: try requireID(),
-              rank: rank,
-              longitude: longitude,
-              latitude: latitude,
-              radius: radius,
-              colorRaw: colorRaw,
-              cylinderMap: try cylinderMap?.toDTO() ?? nil)
-    }
 }
 
 extension CylinderModel {
@@ -98,6 +88,24 @@ extension CylinderModel {
         public static let longitude: BasicCodingKey = "longitude"
         public static let radius: BasicCodingKey = "radius"
         public static let cylinderMapID: BasicCodingKey = "cylinderMapId"
+    }
+}
+
+extension CylinderModel {
+    public func toDTO() throws -> Cylinder {
+        .init(id: try requireID(),
+              rank: rank,
+              longitude: longitude,
+              latitude: latitude,
+              radius: radius,
+              colorRaw: colorRaw,
+              cylinderMap: try cylinderMap?.toDTO() ?? nil)
+    }
+}
+
+extension Collection where Element == CylinderModel {
+    public func toCollection() throws -> [Cylinder] {
+        return try self.map { try $0.toDTO() }
     }
 }
 

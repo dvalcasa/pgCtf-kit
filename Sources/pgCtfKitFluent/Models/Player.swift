@@ -42,53 +42,6 @@ public final class PlayerModel: Model, @unchecked Sendable {
         self.$user.id = userId
         self.$team.id = teamId
     }
-    
-    public func toDTO() throws -> Player {
-        .init(id: try requireID(),
-              name: name,
-              user: try user.toDTO(),
-              team: try team?.toDTO(),
-              locations: try locations.map { try $0.toDTO() })
-    }
-}
-
-extension PlayerModel {
-    public func toPublic() -> PlayerModel.Public {
-        .init(id: id,
-              name: name,
-              user: user,
-              team: team,
-              locations: locations)
-    }
-    
-    public func toResponse() -> PlayerResponse {
-        .init(id: id,
-              name: name,
-              profileID: $user.id,
-              teamID: $team.id)
-    }
-}
-
-extension PlayerModel {
-    public final class Public: Content {
-        public let id: UUID?
-        public let name: String
-        public let user: ProfileModel.Public
-        public let teamId: TeamModel.IDValue?
-        public let locations: [LocationModel.Public]
-
-        public init(id: UUID?,
-                    name: String,
-                    user: ProfileModel,
-                    team: TeamModel? = nil,
-                    locations: [LocationModel] = []) {
-            self.id = id
-            self.name = name
-            self.user = user.toPublic()
-            self.teamId = team?.id
-            self.locations = locations.suffix(5).toPublic()
-        }
-    }
 }
 
 extension PlayerModel {
@@ -115,12 +68,18 @@ extension PlayerModel {
     }
 }
 
-extension Collection where Element: PlayerModel {
-    public func toPublic() -> [PlayerModel.Public] {
-        return self.map { $0.toPublic() }
+extension PlayerModel {
+    public func toDTO() throws -> Player {
+        .init(id: try requireID(),
+              name: name,
+              user: try user.toDTO(),
+              team: try team?.toDTO(),
+              locations: try locations.map { try $0.toDTO() })
     }
-    
-    public func toResponse() -> [PlayerResponse] {
-        return self.map { $0.toResponse() }
+}
+
+extension Collection where Element: PlayerModel {
+    public func toCollection() throws -> [Player] {
+        return try self.map { try $0.toDTO() }
     }
 }

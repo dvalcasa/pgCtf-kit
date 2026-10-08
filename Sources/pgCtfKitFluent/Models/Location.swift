@@ -56,15 +56,6 @@ public final class LocationModel: Model, @unchecked Sendable {
         self.timestamp = timestamp
         self.$player.id = playerID
     }
-    
-    public func toDTO() throws -> Location {
-        .init(id: try requireID(),
-              longitude: longitude,
-              latitude: latitude,
-              altitude: altitude,
-              timestamp: timestamp,
-              player: try player.toDTO())
-    }
 }
 
 extension LocationModel {
@@ -95,48 +86,18 @@ extension LocationModel {
 }
 
 extension LocationModel {
-    public final class Public: Content {
-        public let id: UUID?
-        public let latitude: Double
-        public let longitude: Double
-        public let altitude: Double
-        public let timestamp: String
-
-        public init( id: UUID?,
-              latitude: Double,
-              longitude: Double,
-              altitude: Double,
-              timestamp: String) {
-            self.id = id
-            self.latitude = latitude
-            self.longitude = longitude
-            self.altitude = altitude
-            self.timestamp = timestamp
-        }
-    }
-}
-
-extension LocationModel {
-    public func toPublic() -> LocationModel.Public {
-        .init(id: id,
-              latitude: latitude,
+    public func toDTO() throws -> Location {
+        .init(id: try requireID(),
               longitude: longitude,
-              altitude: altitude,
-              timestamp: timestamp.ISO8601Format())
-    }
-    
-    public func toResponse() -> LocationResponse {
-        .init(id: id,
               latitude: latitude,
-              longitude: longitude,
               altitude: altitude,
-              timestamp: timestamp.ISO8601Format(),
-              playerID: $player.id)
+              timestamp: timestamp,
+              player: try player.toDTO())
     }
 }
 
 extension Collection where Element: LocationModel {
-    public func toPublic() -> [LocationModel.Public] {
-        return self.map { $0.toPublic() }
+    public func toCollection() throws -> [Location] {
+        return try self.map { try $0.toDTO() }
     }
 }

@@ -52,17 +52,6 @@ public final class TeamModel: Model, @unchecked Sendable {
         self.nbPlayersMax = nbPlayersMax
         self.$game.id = gameID
     }
-    
-    public func toDTO() throws -> Team {
-        .init(
-            id: try requireID(),
-            name: name,
-            color: color,
-            nbPlayersMax: nbPlayersMax,
-            players: try players.map { try $0.toDTO() },
-            game: try game.toDTO()
-        )
-    }
 }
 
 extension TeamModel {
@@ -92,56 +81,20 @@ extension TeamModel {
 }
 
 extension TeamModel {
-    public final class Public: Content {
-        public let id: UUID?
-        public let name: String
-        public let color: Int
-        public  let score: Int
-        public let nbPlayersMax: Int?
-        public let gameId: GameModel.IDValue?
-        public let players: [PlayerModel.Public]
-
-        init(id: UUID?,
-             name: String,
-             color: Int,
-             score: Int,
-             game: GameModel,
-             nbPlayersMax: Int? = nil,
-             players: [PlayerModel] = []) {
-            self.id = id
-            self.name = name
-            self.color = color
-            self.score = score
-            self.nbPlayersMax = nbPlayersMax
-            self.gameId = game.id
-            self.players = players.toPublic()
-        }
-    }
-}
-
-extension TeamModel {
-    public func toPublic() -> TeamModel.Public {
-        .init(id: id,
-              name: name,
-              color: color,
-              score: score,
-              game: game,
-              nbPlayersMax: nbPlayersMax,
-              players: players)
-    }
-    
-    public func toResponse() -> TeamResponse {
-        .init(id: id,
-              name: name,
-              color: color,
-              score: score,
-              gameID: $game.id,
-              nbPlayersMax: nbPlayersMax)
+    public func toDTO() throws -> Team {
+        .init(
+            id: try requireID(),
+            name: name,
+            color: color,
+            nbPlayersMax: nbPlayersMax,
+            players: try players.map { try $0.toDTO() },
+            game: try game.toDTO()
+        )
     }
 }
 
 extension Collection where Element: TeamModel {
-    public func toPublic() -> [TeamModel.Public] {
-        return self.map { $0.toPublic() }
+    public func toCollection() throws -> [Team] {
+        return try self.map { try $0.toDTO() }
     }
 }

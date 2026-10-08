@@ -81,20 +81,6 @@ public final class ProfileModel: Model, @unchecked Sendable {
         self.isRestricted = isRestricted
         self.$glider.id = glider?.id
     }
-    
-    public func toDTO() throws -> Profile {
-        .init(id: try requireID(),
-              userId: userId,
-              username: username,
-              email: email,
-              firstName: firstName,
-              lastName: lastName,
-              playerName: playerName,
-              glider: try glider?.toDTO(),
-              isAdmin: isAdmin,
-              status: status,
-              isRestricted: isRestricted)
-    }
 }
 
 extension ProfileModel {
@@ -150,79 +136,24 @@ extension ProfileModel {
 }
 
 extension ProfileModel {
-    public func toPublic() -> ProfileModel.Public {
-        .init(id: id,
+    public func toDTO() throws -> Profile {
+        .init(id: try requireID(),
               userId: userId,
               username: username,
               email: email,
               firstName: firstName,
               lastName: lastName,
               playerName: playerName,
-              glider: glider,
-              status: status,
+              glider: try glider?.toDTO(),
               isAdmin: isAdmin,
+              status: status,
               isRestricted: isRestricted)
-    }
-    
-    public func toResponse() -> ProfileResponse {
-        .init(id: id,
-              userId: userId,
-              username: username,
-              email: email,
-              firstName: firstName,
-              lastName: lastName,
-              playerName: playerName,
-              gliderId: $glider.id,
-              status: status,
-              isAdmin: isAdmin,
-              isRestricted: isRestricted
-        )
-    }
-}
-
-extension ProfileModel {
-    public final class Public: Content {
-        public let id: UUID?
-        public let userId: UUID
-        public let username: String
-        public let email: String
-        public let firstName: String?
-        public let lastName: String?
-        public let playerName: String?
-        public let glider: GliderModel.Public?
-        public let status: Profile.Status
-        public let isAdmin: Bool
-        public let isRestricted: Bool
-        
-        public init(id: UUID?,
-             userId: UUID,
-             username: String,
-             email: String,
-             firstName: String? = nil,
-             lastName: String? = nil,
-             playerName: String? = nil,
-             glider: GliderModel? = nil,
-             status: Profile.Status,
-             isAdmin: Bool,
-             isRestricted: Bool) {
-            self.id = id
-            self.userId = userId
-            self.username = username
-            self.email = email
-            self.firstName = firstName
-            self.lastName = lastName
-            self.playerName = playerName
-            self.glider = glider?.toPublic()
-            self.status = status
-            self.isAdmin = isAdmin
-            self.isRestricted = isRestricted
-        }
     }
 }
 
 extension Collection where Element: ProfileModel {
-    public func toPublic() -> [ProfileModel.Public] {
-        return self.map { $0.toPublic() }
+    public func toCollection() throws -> [Profile] {
+        return try self.map { try $0.toDTO() }
     }
 }
 

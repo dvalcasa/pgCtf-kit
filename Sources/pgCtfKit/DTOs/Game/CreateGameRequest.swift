@@ -7,7 +7,7 @@ public struct CreateGameRequest: Codable, Sendable {
     public let cylinderMapID: UUID?
     public let startAt: Date
     public let endAt: Date
-    public let status: Game.Status?
+    public let status: Game.Status
     
     public init(name: String,
                 scoringType: ScoringType,
@@ -20,6 +20,6 @@ public struct CreateGameRequest: Codable, Sendable {
         self.cylinderMapID = cylinderMapID
         self.startAt = startAt
         self.endAt = endAt
-        self.status = status
+        self.status = status ?? .new
     }
 }

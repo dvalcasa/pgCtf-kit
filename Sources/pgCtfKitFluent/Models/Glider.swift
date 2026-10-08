@@ -56,15 +56,6 @@ public final class GliderModel: Model, @unchecked Sendable {
         self.colorName = colorName
         self.colors = colors
     }
-    
-    public func toDTO() throws -> Glider {
-        .init(id: try requireID(),
-              brand: brand,
-              model: model,
-              size: size,
-              colorName: colorName,
-              colors: colors)
-    }
 }
 
 extension GliderModel {
@@ -86,42 +77,8 @@ extension GliderModel {
 }
 
 extension GliderModel {
-    public final class Public: Content {
-        public let id: UUID?
-        public let brand: String
-        public let model: String
-        public let size: String
-        public let colorName: String
-        public let colors: [Int]?
-
-        public init(id: UUID?,
-             brand: String,
-             model: String,
-             size: String,
-             colorName: String,
-             colors: [Int]? = nil) {
-            self.id = id
-            self.brand = brand
-            self.model = model
-            self.size = size
-            self.colorName = colorName
-            self.colors = colors
-        }
-    }
-}
-
-extension GliderModel {
-    public func toPublic() -> GliderModel.Public {
-        .init(id: id,
-              brand: brand,
-              model: model,
-              size: size,
-              colorName: colorName,
-              colors: colors)
-    }
-
-    public func toResonse() -> GliderResponse {
-        .init(id: id,
+    public func toDTO() throws -> Glider {
+        .init(id: try requireID(),
               brand: brand,
               model: model,
               size: size,
@@ -131,7 +88,7 @@ extension GliderModel {
 }
 
 extension Collection where Element: GliderModel {
-    public func toPublic() -> [GliderModel.Public] {
-        return self.map { $0.toPublic() }
+    public func toCollection() throws -> [Glider] {
+        return try self.map { try $0.toDTO() }
     }
 }

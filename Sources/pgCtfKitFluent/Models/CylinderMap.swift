@@ -49,14 +49,6 @@ public final class CylinderMapModel: Model, @unchecked Sendable {
         self.description = description
         self.imageData = imageData
     }
-    
-    public func toDTO() throws -> CylinderMap {
-        .init(id: try requireID(),
-              name: name,
-              description: description,
-              imageData: imageData,
-              cylinders: try cylinders.map { try $0.toDTO() })
-    }
 }
 
 extension CylinderMapModel {
@@ -72,6 +64,16 @@ extension CylinderMapModel {
         public static let createdAt: FieldKey = "created_at"
         public static let updatedAt: FieldKey = "updated_at"
         public static let deletedAt: FieldKey = "deleted_at"
+    }
+}
+
+extension CylinderMapModel {
+    public func toDTO() throws -> CylinderMap {
+        .init(id: try requireID(),
+              name: name,
+              description: description,
+              imageData: imageData,
+              cylinders: try cylinders.map { try $0.toDTO() })
     }
 }
 

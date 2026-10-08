@@ -57,19 +57,6 @@ public final class GameModel: Model, @unchecked Sendable {
         self.$cylinderMap.id = cylinderMapID
         self.status = status
     }
-    
-    public func toDTO() throws -> Game {
-        .init(
-            id: try requireID(),
-            name: name,
-            cylinderMap: try cylinderMap?.toDTO(),
-            startAt: startAt,
-            endAt: endAt,
-            scoringType: scoringType,
-            teams: try teams.map { try $0.toDTO() },
-            status: status
-        )
-    }
 }
 
 extension GameModel {
@@ -102,66 +89,23 @@ extension GameModel {
 }
 
 extension GameModel {
-    public final class Public: Content {
-        public let id: UUID?
-        public let name: String
-        public let scoringType: ScoringType
-        public let startAt: String
-        public let endAt: String
-        public let cylinderMapID: UUID?
-        public let teams: [TeamModel.Public]
-        public let status: Game.Status
-
-        public init(id: UUID? = nil,
-             name: String,
-             scoringType: ScoringType,
-             startAt: Date,
-             endAt: Date,
-             cylinderMapID: UUID?,
-             teams: [TeamModel] = [],
-             status: Game.Status) {
-            self.id = id
-            self.name = name
-            self.scoringType = scoringType
-            self.startAt = startAt.ISO8601Format()
-            self.endAt = endAt.ISO8601Format()
-            self.cylinderMapID = cylinderMapID
-            self.teams = teams.toPublic()
-            self.status = status
-        }
-    }
-}
-
-extension GameModel {
-    public func toPublic() -> GameModel.Public {
-        .init(id: id,
-              name: name,
-              scoringType: scoringType,
-              startAt: startAt,
-              endAt: endAt,
-              cylinderMapID: cylinderMap?.id,
-              teams: teams,
-              status: status)
-    }
-    
-    public func toResponse() -> GameResponse {
-        .init(id: id,
-              name: name,
-              scoringType: scoringType,
-              startAt: startAt.ISO8601Format(),
-              endAt: endAt.ISO8601Format(),
-              cylinderMapID: $cylinderMap.id,
-              status: status)
+    public func toDTO() throws -> Game {
+        .init(
+            id: try requireID(),
+            name: name,
+            cylinderMap: try cylinderMap?.toDTO(),
+            startAt: startAt,
+            endAt: endAt,
+            scoringType: scoringType,
+            teams: try teams.map { try $0.toDTO() },
+            status: status
+        )
     }
 }
 
 extension Collection where Element: GameModel {
-    public func toPublic() -> [GameModel.Public] {
-        return self.map { $0.toPublic() }
-    }
-    
-    public func toResponse() -> [GameResponse] {
-        return self.map { $0.toResponse() }
+    public func toCollection() throws -> [Game] {
+        return try self.map { try $0.toDTO() }
     }
 }
 
