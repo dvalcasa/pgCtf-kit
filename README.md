@@ -1,3 +1,3 @@
 #  pgCtfKit
 
-DTOs and Model for pgCtf and iPgCtf app
+DTOs and Models for pgCtf app and iPgCtf app
