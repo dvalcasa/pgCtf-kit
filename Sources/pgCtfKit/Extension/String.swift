@@ -9,7 +9,8 @@ import Foundation
 
 extension String {
     public var isValidEmail: Bool {
-        NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
+        let emailRegex = #"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"#
+        return self.range(of: emailRegex, options: .regularExpression) != nil
     }
     
     public func ISO8601FormatToDate() -> Date {
