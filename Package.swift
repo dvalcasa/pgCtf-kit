@@ -6,10 +6,8 @@ import PackageDescription
 let package = Package(
     name: "pgCtf-kit",
     platforms: [
-        .macOS(.v15),
-        .iOS(.v16),
-        .watchOS(.v11),
-        .tvOS(.v18),
+        .macOS(.v14),
+        .iOS(.v16)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -45,5 +43,5 @@ let package = Package(
             dependencies: ["pgCtfKit"]
         ),
     ],
-    swiftLanguageModes: [.v6]
+    swiftLanguageModes: [.v5]
 )
