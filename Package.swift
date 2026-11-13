@@ -11,12 +11,8 @@ let package = Package(
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "pgCtfKit",
-            targets: ["pgCtfKit"]
-        ),
-        .library(name: "pgCtfKitFluent",
-                 targets: ["pgCtfKitFluent"])
+        .library(name: "pgCtfKit", targets: ["pgCtfKit"]),              // DTOs + structs, with dependencies
+        .library(name: "pgCtfKitFluent", targets: ["pgCtfKitFluent"])   // Models Fluent
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.

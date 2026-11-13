@@ -5,7 +5,7 @@
 //  Created by Didier Valcasara on 17/11/2024.
 //
 
-import pgCtfKit
+@_exported import pgCtfKit
 import Vapor
 
 extension ScoringType {

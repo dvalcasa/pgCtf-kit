@@ -7,7 +7,7 @@
 
 import Fluent
 import Vapor
-import pgCtfKit
+@_exported import pgCtfKit
 
 public final class GliderModel: Model, @unchecked Sendable {
 

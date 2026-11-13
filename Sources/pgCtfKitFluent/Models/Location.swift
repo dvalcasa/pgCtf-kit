@@ -7,7 +7,7 @@
 
 import Fluent
 import Vapor
-import pgCtfKit
+@_exported import pgCtfKit
 
 /// Property wrappers interact poorly with `Sendable` checking, causing a warning for the `@ID` property
 /// It is recommended you write your model with sendability checking on and then suppress the warning

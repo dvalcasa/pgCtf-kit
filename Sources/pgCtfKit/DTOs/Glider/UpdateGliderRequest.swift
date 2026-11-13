@@ -5,8 +5,6 @@
 //  Created by Didier Valcasara on 13/11/2025.
 //
 
-import Foundation
-
 public struct UpdateGliderRequest: Codable, Sendable {
     public let brand: String?
     public let model: String?
